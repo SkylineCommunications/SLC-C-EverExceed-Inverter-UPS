@@ -8,6 +8,21 @@ namespace Skyline.DataMiner.Scripting
 {
 public static class Parameter
 {
+	/// <summary>PID: 20 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int alarmcode_20 = 20;
+	/// <summary>PID: 20 | Type: read</summary>
+	public const int alarmcode = 20;
+	/// <summary>PID: 21 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int activealarmsummary_21 = 21;
+	/// <summary>PID: 21 | Type: read</summary>
+	public const int activealarmsummary = 21;
+	/// <summary>PID: 22 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int activealarmcount_22 = 22;
+	/// <summary>PID: 22 | Type: read</summary>
+	public const int activealarmcount = 22;
 	/// <summary>PID: 100 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int productname_100 = 100;
@@ -38,209 +53,194 @@ public static class Parameter
 	public const int mainsupplypriority_112 = 112;
 	/// <summary>PID: 112 | Type: read</summary>
 	public const int mainsupplypriority = 112;
+	/// <summary>PID: 113 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int offtimer_113 = 113;
+	/// <summary>PID: 113 | Type: read</summary>
+	public const int offtimer = 113;
 	/// <summary>PID: 114 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int offtimer_114 = 114;
+	public const int clearalarmrecord_114 = 114;
 	/// <summary>PID: 114 | Type: read</summary>
-	public const int offtimer = 114;
-	/// <summary>PID: 115 | Type: read</summary>
+	public const int clearalarmrecord = 114;
+	/// <summary>PID: 120 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int clearalarmrecord_115 = 115;
-	/// <summary>PID: 115 | Type: read</summary>
-	public const int clearalarmrecord = 115;
+	public const int dcvoltage_120 = 120;
+	/// <summary>PID: 120 | Type: read</summary>
+	public const int dcvoltage = 120;
+	/// <summary>PID: 121 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int acvoltage_121 = 121;
+	/// <summary>PID: 121 | Type: read</summary>
+	public const int acvoltage = 121;
+	/// <summary>PID: 122 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int acfrequency_122 = 122;
+	/// <summary>PID: 122 | Type: read</summary>
+	public const int acfrequency = 122;
+	/// <summary>PID: 130 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int workfrequency_130 = 130;
+	/// <summary>PID: 130 | Type: read</summary>
+	public const int workfrequency = 130;
+	/// <summary>PID: 131 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int outputvoltage_131 = 131;
+	/// <summary>PID: 131 | Type: read</summary>
+	public const int outputvoltage = 131;
+	/// <summary>PID: 132 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int outputcurrent_132 = 132;
+	/// <summary>PID: 132 | Type: read</summary>
+	public const int outputcurrent = 132;
+	/// <summary>PID: 133 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int outputpower_133 = 133;
+	/// <summary>PID: 133 | Type: read</summary>
+	public const int outputpower = 133;
+	/// <summary>PID: 134 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int loadratio_134 = 134;
+	/// <summary>PID: 134 | Type: read</summary>
+	public const int loadratio = 134;
+	/// <summary>PID: 140 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int internaltemperature_140 = 140;
+	/// <summary>PID: 140 | Type: read</summary>
+	public const int internaltemperature = 140;
+	/// <summary>PID: 141 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int ambienttemperature_141 = 141;
+	/// <summary>PID: 141 | Type: read</summary>
+	public const int ambienttemperature = 141;
+	/// <summary>PID: 142 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int fanstatus_142 = 142;
+	/// <summary>PID: 142 | Type: read</summary>
+	public const int fanstatus = 142;
+	/// <summary>PID: 143 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int alarmsoundstatus_143 = 143;
+	/// <summary>PID: 143 | Type: read</summary>
+	public const int alarmsoundstatus = 143;
 	/// <summary>PID: 200 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int dcvoltage_200 = 200;
+	public const int systemtimeraw_200 = 200;
 	/// <summary>PID: 200 | Type: read</summary>
-	public const int dcvoltage = 200;
-	/// <summary>PID: 201 | Type: read</summary>
+	public const int systemtimeraw = 200;
+	/// <summary>PID: 210 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int acvoltage_201 = 201;
-	/// <summary>PID: 201 | Type: read</summary>
-	public const int acvoltage = 201;
-	/// <summary>PID: 202 | Type: read</summary>
+	public const int dcvoltageraw_210 = 210;
+	/// <summary>PID: 210 | Type: read</summary>
+	public const int dcvoltageraw = 210;
+	/// <summary>PID: 211 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int acfrequency_202 = 202;
-	/// <summary>PID: 202 | Type: read</summary>
-	public const int acfrequency = 202;
-	/// <summary>PID: 300 | Type: read</summary>
+	public const int acvoltageraw_211 = 211;
+	/// <summary>PID: 211 | Type: read</summary>
+	public const int acvoltageraw = 211;
+	/// <summary>PID: 212 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int workfrequency_300 = 300;
-	/// <summary>PID: 300 | Type: read</summary>
-	public const int workfrequency = 300;
-	/// <summary>PID: 301 | Type: read</summary>
+	public const int acfrequencyraw_212 = 212;
+	/// <summary>PID: 212 | Type: read</summary>
+	public const int acfrequencyraw = 212;
+	/// <summary>PID: 220 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int outputvoltage_301 = 301;
-	/// <summary>PID: 301 | Type: read</summary>
-	public const int outputvoltage = 301;
-	/// <summary>PID: 302 | Type: read</summary>
+	public const int workfrequencyraw_220 = 220;
+	/// <summary>PID: 220 | Type: read</summary>
+	public const int workfrequencyraw = 220;
+	/// <summary>PID: 221 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int outputcurrent_302 = 302;
-	/// <summary>PID: 302 | Type: read</summary>
-	public const int outputcurrent = 302;
-	/// <summary>PID: 303 | Type: read</summary>
+	public const int outputvoltageraw_221 = 221;
+	/// <summary>PID: 221 | Type: read</summary>
+	public const int outputvoltageraw = 221;
+	/// <summary>PID: 222 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int outputpower_303 = 303;
-	/// <summary>PID: 303 | Type: read</summary>
-	public const int outputpower = 303;
-	/// <summary>PID: 304 | Type: read</summary>
+	public const int outputcurrentraw_222 = 222;
+	/// <summary>PID: 222 | Type: read</summary>
+	public const int outputcurrentraw = 222;
+	/// <summary>PID: 223 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int loadratio_304 = 304;
-	/// <summary>PID: 304 | Type: read</summary>
-	public const int loadratio = 304;
-	/// <summary>PID: 400 | Type: read</summary>
+	public const int outputpowerraw_223 = 223;
+	/// <summary>PID: 223 | Type: read</summary>
+	public const int outputpowerraw = 223;
+	/// <summary>PID: 224 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int internaltemperature_400 = 400;
-	/// <summary>PID: 400 | Type: read</summary>
-	public const int internaltemperature = 400;
-	/// <summary>PID: 401 | Type: read</summary>
+	public const int loadratioraw_224 = 224;
+	/// <summary>PID: 224 | Type: read</summary>
+	public const int loadratioraw = 224;
+	/// <summary>PID: 230 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int ambienttemperature_401 = 401;
-	/// <summary>PID: 401 | Type: read</summary>
-	public const int ambienttemperature = 401;
-	/// <summary>PID: 402 | Type: read</summary>
+	public const int internaltemperatureraw_230 = 230;
+	/// <summary>PID: 230 | Type: read</summary>
+	public const int internaltemperatureraw = 230;
+	/// <summary>PID: 231 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int fanstatus_402 = 402;
-	/// <summary>PID: 402 | Type: read</summary>
-	public const int fanstatus = 402;
-	/// <summary>PID: 403 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int alarmsoundstatus_403 = 403;
-	/// <summary>PID: 403 | Type: read</summary>
-	public const int alarmsoundstatus = 403;
-	/// <summary>PID: 500 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int alarmcode_500 = 500;
-	/// <summary>PID: 500 | Type: read</summary>
-	public const int alarmcode = 500;
-	/// <summary>PID: 501 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int activealarmsummary_501 = 501;
-	/// <summary>PID: 501 | Type: read</summary>
-	public const int activealarmsummary = 501;
-	/// <summary>PID: 502 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int activealarmcount_502 = 502;
-	/// <summary>PID: 502 | Type: read</summary>
-	public const int activealarmcount = 502;
-	/// <summary>PID: 1110 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int systemtimeraw_1110 = 1110;
-	/// <summary>PID: 1110 | Type: read</summary>
-	public const int systemtimeraw = 1110;
-	/// <summary>PID: 1200 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int dcvoltageraw_1200 = 1200;
-	/// <summary>PID: 1200 | Type: read</summary>
-	public const int dcvoltageraw = 1200;
-	/// <summary>PID: 1201 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int acvoltageraw_1201 = 1201;
-	/// <summary>PID: 1201 | Type: read</summary>
-	public const int acvoltageraw = 1201;
-	/// <summary>PID: 1202 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int acfrequencyraw_1202 = 1202;
-	/// <summary>PID: 1202 | Type: read</summary>
-	public const int acfrequencyraw = 1202;
-	/// <summary>PID: 1300 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int workfrequencyraw_1300 = 1300;
-	/// <summary>PID: 1300 | Type: read</summary>
-	public const int workfrequencyraw = 1300;
-	/// <summary>PID: 1301 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int outputvoltageraw_1301 = 1301;
-	/// <summary>PID: 1301 | Type: read</summary>
-	public const int outputvoltageraw = 1301;
-	/// <summary>PID: 1302 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int outputcurrentraw_1302 = 1302;
-	/// <summary>PID: 1302 | Type: read</summary>
-	public const int outputcurrentraw = 1302;
-	/// <summary>PID: 1303 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int outputpowerraw_1303 = 1303;
-	/// <summary>PID: 1303 | Type: read</summary>
-	public const int outputpowerraw = 1303;
-	/// <summary>PID: 1304 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int loadratioraw_1304 = 1304;
-	/// <summary>PID: 1304 | Type: read</summary>
-	public const int loadratioraw = 1304;
-	/// <summary>PID: 1400 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int internaltemperatureraw_1400 = 1400;
-	/// <summary>PID: 1400 | Type: read</summary>
-	public const int internaltemperatureraw = 1400;
-	/// <summary>PID: 1401 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int ambienttemperatureraw_1401 = 1401;
-	/// <summary>PID: 1401 | Type: read</summary>
-	public const int ambienttemperatureraw = 1401;
+	public const int ambienttemperatureraw_231 = 231;
+	/// <summary>PID: 231 | Type: read</summary>
+	public const int ambienttemperatureraw = 231;
 	public class Write
 	{
-		/// <summary>PID: 160 | Type: write</summary>
+		/// <summary>PID: 50 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int syncsystemtime_160 = 160;
-		/// <summary>PID: 160 | Type: write</summary>
-		public const int syncsystemtime = 160;
+		public const int syncsystemtime_50 = 50;
+		/// <summary>PID: 50 | Type: write</summary>
+		public const int syncsystemtime = 50;
 		/// <summary>PID: 162 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		public const int mainsupplypriority_162 = 162;
 		/// <summary>PID: 162 | Type: write</summary>
 		public const int mainsupplypriority = 162;
+		/// <summary>PID: 163 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int offtimer_163 = 163;
+		/// <summary>PID: 163 | Type: write</summary>
+		public const int offtimer = 163;
 		/// <summary>PID: 164 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int offtimer_164 = 164;
+		public const int clearalarmrecord_164 = 164;
 		/// <summary>PID: 164 | Type: write</summary>
-		public const int offtimer = 164;
-		/// <summary>PID: 165 | Type: write</summary>
+		public const int clearalarmrecord = 164;
+		/// <summary>PID: 250 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int clearalarmrecord_165 = 165;
-		/// <summary>PID: 165 | Type: write</summary>
-		public const int clearalarmrecord = 165;
-		/// <summary>PID: 1160 | Type: write</summary>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int systemtimeraw_1160 = 1160;
-		/// <summary>PID: 1160 | Type: write</summary>
-		public const int systemtimeraw = 1160;
+		public const int systemtimeraw_250 = 250;
+		/// <summary>PID: 250 | Type: write</summary>
+		public const int systemtimeraw = 250;
 	}
 	public class Alarmstatus
 	{
-		/// <summary>PID: 600</summary>
-		public const int tablePid = 600;
+		/// <summary>PID: 1000</summary>
+		public const int tablePid = 1000;
 		/// <summary>IDX: 0</summary>
 		public const int indexColumn = 0;
-		/// <summary>PID: 601</summary>
-		public const int indexColumnPid = 601;
+		/// <summary>PID: 1001</summary>
+		public const int indexColumnPid = 1001;
 		public class Pid
 		{
-			/// <summary>PID: 601 | Type: read</summary>
+			/// <summary>PID: 1001 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusbit_601 = 601;
-			/// <summary>PID: 601 | Type: read</summary>
-			public const int alarmstatusbit = 601;
-			/// <summary>PID: 602 | Type: read</summary>
+			public const int alarmstatusbit_1001 = 1001;
+			/// <summary>PID: 1001 | Type: read</summary>
+			public const int alarmstatusbit = 1001;
+			/// <summary>PID: 1002 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusmask_602 = 602;
-			/// <summary>PID: 602 | Type: read</summary>
-			public const int alarmstatusmask = 602;
-			/// <summary>PID: 603 | Type: read</summary>
+			public const int alarmstatusmask_1002 = 1002;
+			/// <summary>PID: 1002 | Type: read</summary>
+			public const int alarmstatusmask = 1002;
+			/// <summary>PID: 1003 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusdescription_603 = 603;
-			/// <summary>PID: 603 | Type: read</summary>
-			public const int alarmstatusdescription = 603;
-			/// <summary>PID: 604 | Type: read</summary>
+			public const int alarmstatusdescription_1003 = 1003;
+			/// <summary>PID: 1003 | Type: read</summary>
+			public const int alarmstatusdescription = 1003;
+			/// <summary>PID: 1004 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusstate_604 = 604;
-			/// <summary>PID: 604 | Type: read</summary>
-			public const int alarmstatusstate = 604;
-			/// <summary>PID: 605 | Type: read</summary>
+			public const int alarmstatusstate_1004 = 1004;
+			/// <summary>PID: 1004 | Type: read</summary>
+			public const int alarmstatusstate = 1004;
+			/// <summary>PID: 1005 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusvalue_605 = 605;
-			/// <summary>PID: 605 | Type: read</summary>
-			public const int alarmstatusvalue = 605;
+			public const int alarmstatusvalue_1005 = 1005;
+			/// <summary>PID: 1005 | Type: read</summary>
+			public const int alarmstatusvalue = 1005;
 			public class Write
 			{
 			}
@@ -249,27 +249,27 @@ public static class Parameter
 		{
 			/// <summary>IDX: 0 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusbit_601 = 0;
+			public const int alarmstatusbit_1001 = 0;
 			/// <summary>IDX: 0 | Type: read</summary>
 			public const int alarmstatusbit = 0;
 			/// <summary>IDX: 1 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusmask_602 = 1;
+			public const int alarmstatusmask_1002 = 1;
 			/// <summary>IDX: 1 | Type: read</summary>
 			public const int alarmstatusmask = 1;
 			/// <summary>IDX: 2 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusdescription_603 = 2;
+			public const int alarmstatusdescription_1003 = 2;
 			/// <summary>IDX: 2 | Type: read</summary>
 			public const int alarmstatusdescription = 2;
 			/// <summary>IDX: 3 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusstate_604 = 3;
+			public const int alarmstatusstate_1004 = 3;
 			/// <summary>IDX: 3 | Type: read</summary>
 			public const int alarmstatusstate = 3;
 			/// <summary>IDX: 4 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int alarmstatusvalue_605 = 4;
+			public const int alarmstatusvalue_1005 = 4;
 			/// <summary>IDX: 4 | Type: read</summary>
 			public const int alarmstatusvalue = 4;
 		}
@@ -277,16 +277,16 @@ public static class Parameter
 }
 public class WriteParameters
 {
-	/// <summary>PID: 160  | Type: write | DISCREETS: Sync With DMA = 1</summary>
-	public System.Object Syncsystemtime {get { return Protocol.GetParameter(160); }set { Protocol.SetParameter(160, value); }}
+	/// <summary>PID: 50  | Type: write | DISCREETS: Sync With DMA = 1</summary>
+	public System.Object Syncsystemtime {get { return Protocol.GetParameter(50); }set { Protocol.SetParameter(50, value); }}
 	/// <summary>PID: 162  | Type: write | DISCREETS: AC Priority = 172, DC Priority = 220</summary>
 	public System.Object Mainsupplypriority {get { return Protocol.GetParameter(162); }set { Protocol.SetParameter(162, value); }}
-	/// <summary>PID: 164  | Type: write</summary>
-	public System.Object Offtimer {get { return Protocol.GetParameter(164); }set { Protocol.SetParameter(164, value); }}
-	/// <summary>PID: 165  | Type: write | DISCREETS: Clear = 1</summary>
-	public System.Object Clearalarmrecord {get { return Protocol.GetParameter(165); }set { Protocol.SetParameter(165, value); }}
-	/// <summary>PID: 1160  | Type: write</summary>
-	public System.Object Systemtimeraw {get { return Protocol.GetParameter(1160); }set { Protocol.SetParameter(1160, value); }}
+	/// <summary>PID: 163  | Type: write</summary>
+	public System.Object Offtimer {get { return Protocol.GetParameter(163); }set { Protocol.SetParameter(163, value); }}
+	/// <summary>PID: 164  | Type: write | DISCREETS: Clear = 1</summary>
+	public System.Object Clearalarmrecord {get { return Protocol.GetParameter(164); }set { Protocol.SetParameter(164, value); }}
+	/// <summary>PID: 250  | Type: write</summary>
+	public System.Object Systemtimeraw {get { return Protocol.GetParameter(250); }set { Protocol.SetParameter(250, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -295,7 +295,7 @@ public class WriteParameters
 }
 public interface SLProtocolExt : SLProtocol
 {
-	/// <summary>PID: 600</summary>
+	/// <summary>PID: 1000</summary>
 	AlarmstatusQActionTable alarmstatus { get; set; }
 	object Datadisplaytitlebegin__fixed { get; set; }
 	object Generictitleend__fixed { get; set; }
@@ -306,6 +306,14 @@ public interface SLProtocolExt : SLProtocol
 	object Timertitlebegin__fixed { get; set; }
 	object Alarmrecordtitlebegin__fixed { get; set; }
 	object Producttitlebegin__fixed { get; set; }
+	object Alarmcode_20 { get; set; }
+	object Alarmcode { get; set; }
+	object Activealarmsummary_21 { get; set; }
+	object Activealarmsummary { get; set; }
+	object Activealarmcount_22 { get; set; }
+	object Activealarmcount { get; set; }
+	object Syncsystemtime_50 { get; set; }
+	object Syncsystemtime { get; set; }
 	object Productname_100 { get; set; }
 	object Productname { get; set; }
 	object Firmwareversion_101 { get; set; }
@@ -318,83 +326,75 @@ public interface SLProtocolExt : SLProtocol
 	object Inverterstatus { get; set; }
 	object Mainsupplypriority_112 { get; set; }
 	object Mainsupplypriority { get; set; }
-	object Offtimer_114 { get; set; }
+	object Offtimer_113 { get; set; }
 	object Offtimer { get; set; }
-	object Clearalarmrecord_115 { get; set; }
+	object Clearalarmrecord_114 { get; set; }
 	object Clearalarmrecord { get; set; }
-	object Syncsystemtime_160 { get; set; }
-	object Syncsystemtime { get; set; }
-	object Mainsupplypriority_162 { get; set; }
-	object Offtimer_164 { get; set; }
-	object Clearalarmrecord_165 { get; set; }
-	object Dcvoltage_200 { get; set; }
+	object Dcvoltage_120 { get; set; }
 	object Dcvoltage { get; set; }
-	object Acvoltage_201 { get; set; }
+	object Acvoltage_121 { get; set; }
 	object Acvoltage { get; set; }
-	object Acfrequency_202 { get; set; }
+	object Acfrequency_122 { get; set; }
 	object Acfrequency { get; set; }
-	object Workfrequency_300 { get; set; }
+	object Workfrequency_130 { get; set; }
 	object Workfrequency { get; set; }
-	object Outputvoltage_301 { get; set; }
+	object Outputvoltage_131 { get; set; }
 	object Outputvoltage { get; set; }
-	object Outputcurrent_302 { get; set; }
+	object Outputcurrent_132 { get; set; }
 	object Outputcurrent { get; set; }
-	object Outputpower_303 { get; set; }
+	object Outputpower_133 { get; set; }
 	object Outputpower { get; set; }
-	object Loadratio_304 { get; set; }
+	object Loadratio_134 { get; set; }
 	object Loadratio { get; set; }
-	object Internaltemperature_400 { get; set; }
+	object Internaltemperature_140 { get; set; }
 	object Internaltemperature { get; set; }
-	object Ambienttemperature_401 { get; set; }
+	object Ambienttemperature_141 { get; set; }
 	object Ambienttemperature { get; set; }
-	object Fanstatus_402 { get; set; }
+	object Fanstatus_142 { get; set; }
 	object Fanstatus { get; set; }
-	object Alarmsoundstatus_403 { get; set; }
+	object Alarmsoundstatus_143 { get; set; }
 	object Alarmsoundstatus { get; set; }
-	object Alarmcode_500 { get; set; }
-	object Alarmcode { get; set; }
-	object Activealarmsummary_501 { get; set; }
-	object Activealarmsummary { get; set; }
-	object Activealarmcount_502 { get; set; }
-	object Activealarmcount { get; set; }
-	object Alarmstatusbit_601 { get; set; }
-	object Alarmstatusbit { get; set; }
-	object Alarmstatusmask_602 { get; set; }
-	object Alarmstatusmask { get; set; }
-	object Alarmstatusdescription_603 { get; set; }
-	object Alarmstatusdescription { get; set; }
-	object Alarmstatusstate_604 { get; set; }
-	object Alarmstatusstate { get; set; }
-	object Alarmstatusvalue_605 { get; set; }
-	object Alarmstatusvalue { get; set; }
-	object Systemtimeraw_1110 { get; set; }
+	object Mainsupplypriority_162 { get; set; }
+	object Offtimer_163 { get; set; }
+	object Clearalarmrecord_164 { get; set; }
+	object Systemtimeraw_200 { get; set; }
 	object Systemtimeraw { get; set; }
-	object Systemtimeraw_1160 { get; set; }
-	object Dcvoltageraw_1200 { get; set; }
+	object Dcvoltageraw_210 { get; set; }
 	object Dcvoltageraw { get; set; }
-	object Acvoltageraw_1201 { get; set; }
+	object Acvoltageraw_211 { get; set; }
 	object Acvoltageraw { get; set; }
-	object Acfrequencyraw_1202 { get; set; }
+	object Acfrequencyraw_212 { get; set; }
 	object Acfrequencyraw { get; set; }
-	object Workfrequencyraw_1300 { get; set; }
+	object Workfrequencyraw_220 { get; set; }
 	object Workfrequencyraw { get; set; }
-	object Outputvoltageraw_1301 { get; set; }
+	object Outputvoltageraw_221 { get; set; }
 	object Outputvoltageraw { get; set; }
-	object Outputcurrentraw_1302 { get; set; }
+	object Outputcurrentraw_222 { get; set; }
 	object Outputcurrentraw { get; set; }
-	object Outputpowerraw_1303 { get; set; }
+	object Outputpowerraw_223 { get; set; }
 	object Outputpowerraw { get; set; }
-	object Loadratioraw_1304 { get; set; }
+	object Loadratioraw_224 { get; set; }
 	object Loadratioraw { get; set; }
-	object Internaltemperatureraw_1400 { get; set; }
+	object Internaltemperatureraw_230 { get; set; }
 	object Internaltemperatureraw { get; set; }
-	object Ambienttemperatureraw_1401 { get; set; }
+	object Ambienttemperatureraw_231 { get; set; }
 	object Ambienttemperatureraw { get; set; }
+	object Systemtimeraw_250 { get; set; }
+	object Alarmstatusbit_1001 { get; set; }
+	object Alarmstatusbit { get; set; }
+	object Alarmstatusmask_1002 { get; set; }
+	object Alarmstatusmask { get; set; }
+	object Alarmstatusdescription_1003 { get; set; }
+	object Alarmstatusdescription { get; set; }
+	object Alarmstatusstate_1004 { get; set; }
+	object Alarmstatusstate { get; set; }
+	object Alarmstatusvalue_1005 { get; set; }
+	object Alarmstatusvalue { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 {
-	/// <summary>PID: 600</summary>
+	/// <summary>PID: 1000</summary>
 	public AlarmstatusQActionTable alarmstatus { get; set; }
 	/// <summary>PID: 10  | Type: fixed</summary>
 	public System.Object Datadisplaytitlebegin__fixed {get { return GetParameter(10); }set { SetParameter(10, value); }}
@@ -402,18 +402,37 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Generictitleend__fixed {get { return GetParameter(11); }set { SetParameter(11, value); }}
 	/// <summary>PID: 12  | Type: fixed</summary>
 	public System.Object Parametersettingtitlebegin__fixed {get { return GetParameter(12); }set { SetParameter(12, value); }}
+	/// <summary>PID: 13  | Type: fixed</summary>
+	public System.Object Measurementstitlebegin__fixed {get { return GetParameter(13); }set { SetParameter(13, value); }}
 	/// <summary>PID: 14  | Type: fixed</summary>
-	public System.Object Measurementstitlebegin__fixed {get { return GetParameter(14); }set { SetParameter(14, value); }}
-	/// <summary>PID: 20  | Type: fixed</summary>
-	public System.Object Alarmsummarytitlebegin__fixed {get { return GetParameter(20); }set { SetParameter(20, value); }}
-	/// <summary>PID: 30  | Type: fixed</summary>
-	public System.Object Systemtimetitlebegin__fixed {get { return GetParameter(30); }set { SetParameter(30, value); }}
-	/// <summary>PID: 32  | Type: fixed</summary>
-	public System.Object Timertitlebegin__fixed {get { return GetParameter(32); }set { SetParameter(32, value); }}
-	/// <summary>PID: 34  | Type: fixed</summary>
-	public System.Object Alarmrecordtitlebegin__fixed {get { return GetParameter(34); }set { SetParameter(34, value); }}
-	/// <summary>PID: 40  | Type: fixed</summary>
-	public System.Object Producttitlebegin__fixed {get { return GetParameter(40); }set { SetParameter(40, value); }}
+	public System.Object Alarmsummarytitlebegin__fixed {get { return GetParameter(14); }set { SetParameter(14, value); }}
+	/// <summary>PID: 15  | Type: fixed</summary>
+	public System.Object Systemtimetitlebegin__fixed {get { return GetParameter(15); }set { SetParameter(15, value); }}
+	/// <summary>PID: 16  | Type: fixed</summary>
+	public System.Object Timertitlebegin__fixed {get { return GetParameter(16); }set { SetParameter(16, value); }}
+	/// <summary>PID: 17  | Type: fixed</summary>
+	public System.Object Alarmrecordtitlebegin__fixed {get { return GetParameter(17); }set { SetParameter(17, value); }}
+	/// <summary>PID: 18  | Type: fixed</summary>
+	public System.Object Producttitlebegin__fixed {get { return GetParameter(18); }set { SetParameter(18, value); }}
+	/// <summary>PID: 20  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Alarmcode_20 {get { return GetParameter(20); }set { SetParameter(20, value); }}
+	/// <summary>PID: 20  | Type: read</summary>
+	public System.Object Alarmcode {get { return GetParameter(20); }set { SetParameter(20, value); }}
+	/// <summary>PID: 21  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Activealarmsummary_21 {get { return GetParameter(21); }set { SetParameter(21, value); }}
+	/// <summary>PID: 21  | Type: read</summary>
+	public System.Object Activealarmsummary {get { return GetParameter(21); }set { SetParameter(21, value); }}
+	/// <summary>PID: 22  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Activealarmcount_22 {get { return GetParameter(22); }set { SetParameter(22, value); }}
+	/// <summary>PID: 22  | Type: read</summary>
+	public System.Object Activealarmcount {get { return GetParameter(22); }set { SetParameter(22, value); }}
+	/// <summary>PID: 50  | Type: write | DISCREETS: Sync With DMA = 1</summary>
+	public System.Object Syncsystemtime_50 {get { return GetParameter(50); }set { SetParameter(50, value); }}
+	/// <summary>PID: 50  | Type: write | DISCREETS: Sync With DMA = 1</summary>
+	public System.Object Syncsystemtime {get { return Write.Syncsystemtime; }set { Write.Syncsystemtime = value; }}
 	/// <summary>PID: 100  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Productname_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}
@@ -444,191 +463,172 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Mainsupplypriority_112 {get { return GetParameter(112); }set { SetParameter(112, value); }}
 	/// <summary>PID: 112  | Type: read | DISCREETS: AC Priority = 172, DC Priority = 220</summary>
 	public System.Object Mainsupplypriority {get { return GetParameter(112); }set { SetParameter(112, value); }}
+	/// <summary>PID: 113  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Offtimer_113 {get { return GetParameter(113); }set { SetParameter(113, value); }}
+	/// <summary>PID: 113  | Type: read</summary>
+	public System.Object Offtimer {get { return GetParameter(113); }set { SetParameter(113, value); }}
 	/// <summary>PID: 114  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Offtimer_114 {get { return GetParameter(114); }set { SetParameter(114, value); }}
+	public System.Object Clearalarmrecord_114 {get { return GetParameter(114); }set { SetParameter(114, value); }}
 	/// <summary>PID: 114  | Type: read</summary>
-	public System.Object Offtimer {get { return GetParameter(114); }set { SetParameter(114, value); }}
-	/// <summary>PID: 115  | Type: read</summary>
+	public System.Object Clearalarmrecord {get { return GetParameter(114); }set { SetParameter(114, value); }}
+	/// <summary>PID: 120  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Clearalarmrecord_115 {get { return GetParameter(115); }set { SetParameter(115, value); }}
-	/// <summary>PID: 115  | Type: read</summary>
-	public System.Object Clearalarmrecord {get { return GetParameter(115); }set { SetParameter(115, value); }}
-	/// <summary>PID: 160  | Type: write | DISCREETS: Sync With DMA = 1</summary>
-	public System.Object Syncsystemtime_160 {get { return GetParameter(160); }set { SetParameter(160, value); }}
-	/// <summary>PID: 160  | Type: write | DISCREETS: Sync With DMA = 1</summary>
-	public System.Object Syncsystemtime {get { return Write.Syncsystemtime; }set { Write.Syncsystemtime = value; }}
+	public System.Object Dcvoltage_120 {get { return GetParameter(120); }set { SetParameter(120, value); }}
+	/// <summary>PID: 120  | Type: read</summary>
+	public System.Object Dcvoltage {get { return GetParameter(120); }set { SetParameter(120, value); }}
+	/// <summary>PID: 121  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Acvoltage_121 {get { return GetParameter(121); }set { SetParameter(121, value); }}
+	/// <summary>PID: 121  | Type: read</summary>
+	public System.Object Acvoltage {get { return GetParameter(121); }set { SetParameter(121, value); }}
+	/// <summary>PID: 122  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Acfrequency_122 {get { return GetParameter(122); }set { SetParameter(122, value); }}
+	/// <summary>PID: 122  | Type: read</summary>
+	public System.Object Acfrequency {get { return GetParameter(122); }set { SetParameter(122, value); }}
+	/// <summary>PID: 130  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Workfrequency_130 {get { return GetParameter(130); }set { SetParameter(130, value); }}
+	/// <summary>PID: 130  | Type: read</summary>
+	public System.Object Workfrequency {get { return GetParameter(130); }set { SetParameter(130, value); }}
+	/// <summary>PID: 131  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Outputvoltage_131 {get { return GetParameter(131); }set { SetParameter(131, value); }}
+	/// <summary>PID: 131  | Type: read</summary>
+	public System.Object Outputvoltage {get { return GetParameter(131); }set { SetParameter(131, value); }}
+	/// <summary>PID: 132  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Outputcurrent_132 {get { return GetParameter(132); }set { SetParameter(132, value); }}
+	/// <summary>PID: 132  | Type: read</summary>
+	public System.Object Outputcurrent {get { return GetParameter(132); }set { SetParameter(132, value); }}
+	/// <summary>PID: 133  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Outputpower_133 {get { return GetParameter(133); }set { SetParameter(133, value); }}
+	/// <summary>PID: 133  | Type: read</summary>
+	public System.Object Outputpower {get { return GetParameter(133); }set { SetParameter(133, value); }}
+	/// <summary>PID: 134  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Loadratio_134 {get { return GetParameter(134); }set { SetParameter(134, value); }}
+	/// <summary>PID: 134  | Type: read</summary>
+	public System.Object Loadratio {get { return GetParameter(134); }set { SetParameter(134, value); }}
+	/// <summary>PID: 140  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Internaltemperature_140 {get { return GetParameter(140); }set { SetParameter(140, value); }}
+	/// <summary>PID: 140  | Type: read</summary>
+	public System.Object Internaltemperature {get { return GetParameter(140); }set { SetParameter(140, value); }}
+	/// <summary>PID: 141  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Ambienttemperature_141 {get { return GetParameter(141); }set { SetParameter(141, value); }}
+	/// <summary>PID: 141  | Type: read</summary>
+	public System.Object Ambienttemperature {get { return GetParameter(141); }set { SetParameter(141, value); }}
+	/// <summary>PID: 142  | Type: read | DISCREETS: Off = 0, On = 1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Fanstatus_142 {get { return GetParameter(142); }set { SetParameter(142, value); }}
+	/// <summary>PID: 142  | Type: read | DISCREETS: Off = 0, On = 1</summary>
+	public System.Object Fanstatus {get { return GetParameter(142); }set { SetParameter(142, value); }}
+	/// <summary>PID: 143  | Type: read | DISCREETS: Disabled = 0, Enabled = 1</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Alarmsoundstatus_143 {get { return GetParameter(143); }set { SetParameter(143, value); }}
+	/// <summary>PID: 143  | Type: read | DISCREETS: Disabled = 0, Enabled = 1</summary>
+	public System.Object Alarmsoundstatus {get { return GetParameter(143); }set { SetParameter(143, value); }}
 	/// <summary>PID: 162  | Type: write | DISCREETS: AC Priority = 172, DC Priority = 220</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Mainsupplypriority_162 {get { return GetParameter(162); }set { SetParameter(162, value); }}
-	/// <summary>PID: 164  | Type: write</summary>
+	/// <summary>PID: 163  | Type: write</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Offtimer_164 {get { return GetParameter(164); }set { SetParameter(164, value); }}
-	/// <summary>PID: 165  | Type: write | DISCREETS: Clear = 1</summary>
+	public System.Object Offtimer_163 {get { return GetParameter(163); }set { SetParameter(163, value); }}
+	/// <summary>PID: 164  | Type: write | DISCREETS: Clear = 1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Clearalarmrecord_165 {get { return GetParameter(165); }set { SetParameter(165, value); }}
+	public System.Object Clearalarmrecord_164 {get { return GetParameter(164); }set { SetParameter(164, value); }}
 	/// <summary>PID: 200  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Dcvoltage_200 {get { return GetParameter(200); }set { SetParameter(200, value); }}
+	public System.Object Systemtimeraw_200 {get { return GetParameter(200); }set { SetParameter(200, value); }}
 	/// <summary>PID: 200  | Type: read</summary>
-	public System.Object Dcvoltage {get { return GetParameter(200); }set { SetParameter(200, value); }}
-	/// <summary>PID: 201  | Type: read</summary>
+	public System.Object Systemtimeraw {get { return GetParameter(200); }set { SetParameter(200, value); }}
+	/// <summary>PID: 210  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Acvoltage_201 {get { return GetParameter(201); }set { SetParameter(201, value); }}
-	/// <summary>PID: 201  | Type: read</summary>
-	public System.Object Acvoltage {get { return GetParameter(201); }set { SetParameter(201, value); }}
-	/// <summary>PID: 202  | Type: read</summary>
+	public System.Object Dcvoltageraw_210 {get { return GetParameter(210); }set { SetParameter(210, value); }}
+	/// <summary>PID: 210  | Type: read</summary>
+	public System.Object Dcvoltageraw {get { return GetParameter(210); }set { SetParameter(210, value); }}
+	/// <summary>PID: 211  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Acfrequency_202 {get { return GetParameter(202); }set { SetParameter(202, value); }}
-	/// <summary>PID: 202  | Type: read</summary>
-	public System.Object Acfrequency {get { return GetParameter(202); }set { SetParameter(202, value); }}
-	/// <summary>PID: 300  | Type: read</summary>
+	public System.Object Acvoltageraw_211 {get { return GetParameter(211); }set { SetParameter(211, value); }}
+	/// <summary>PID: 211  | Type: read</summary>
+	public System.Object Acvoltageraw {get { return GetParameter(211); }set { SetParameter(211, value); }}
+	/// <summary>PID: 212  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Workfrequency_300 {get { return GetParameter(300); }set { SetParameter(300, value); }}
-	/// <summary>PID: 300  | Type: read</summary>
-	public System.Object Workfrequency {get { return GetParameter(300); }set { SetParameter(300, value); }}
-	/// <summary>PID: 301  | Type: read</summary>
+	public System.Object Acfrequencyraw_212 {get { return GetParameter(212); }set { SetParameter(212, value); }}
+	/// <summary>PID: 212  | Type: read</summary>
+	public System.Object Acfrequencyraw {get { return GetParameter(212); }set { SetParameter(212, value); }}
+	/// <summary>PID: 220  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Outputvoltage_301 {get { return GetParameter(301); }set { SetParameter(301, value); }}
-	/// <summary>PID: 301  | Type: read</summary>
-	public System.Object Outputvoltage {get { return GetParameter(301); }set { SetParameter(301, value); }}
-	/// <summary>PID: 302  | Type: read</summary>
+	public System.Object Workfrequencyraw_220 {get { return GetParameter(220); }set { SetParameter(220, value); }}
+	/// <summary>PID: 220  | Type: read</summary>
+	public System.Object Workfrequencyraw {get { return GetParameter(220); }set { SetParameter(220, value); }}
+	/// <summary>PID: 221  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Outputcurrent_302 {get { return GetParameter(302); }set { SetParameter(302, value); }}
-	/// <summary>PID: 302  | Type: read</summary>
-	public System.Object Outputcurrent {get { return GetParameter(302); }set { SetParameter(302, value); }}
-	/// <summary>PID: 303  | Type: read</summary>
+	public System.Object Outputvoltageraw_221 {get { return GetParameter(221); }set { SetParameter(221, value); }}
+	/// <summary>PID: 221  | Type: read</summary>
+	public System.Object Outputvoltageraw {get { return GetParameter(221); }set { SetParameter(221, value); }}
+	/// <summary>PID: 222  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Outputpower_303 {get { return GetParameter(303); }set { SetParameter(303, value); }}
-	/// <summary>PID: 303  | Type: read</summary>
-	public System.Object Outputpower {get { return GetParameter(303); }set { SetParameter(303, value); }}
-	/// <summary>PID: 304  | Type: read</summary>
+	public System.Object Outputcurrentraw_222 {get { return GetParameter(222); }set { SetParameter(222, value); }}
+	/// <summary>PID: 222  | Type: read</summary>
+	public System.Object Outputcurrentraw {get { return GetParameter(222); }set { SetParameter(222, value); }}
+	/// <summary>PID: 223  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Loadratio_304 {get { return GetParameter(304); }set { SetParameter(304, value); }}
-	/// <summary>PID: 304  | Type: read</summary>
-	public System.Object Loadratio {get { return GetParameter(304); }set { SetParameter(304, value); }}
-	/// <summary>PID: 400  | Type: read</summary>
+	public System.Object Outputpowerraw_223 {get { return GetParameter(223); }set { SetParameter(223, value); }}
+	/// <summary>PID: 223  | Type: read</summary>
+	public System.Object Outputpowerraw {get { return GetParameter(223); }set { SetParameter(223, value); }}
+	/// <summary>PID: 224  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Internaltemperature_400 {get { return GetParameter(400); }set { SetParameter(400, value); }}
-	/// <summary>PID: 400  | Type: read</summary>
-	public System.Object Internaltemperature {get { return GetParameter(400); }set { SetParameter(400, value); }}
-	/// <summary>PID: 401  | Type: read</summary>
+	public System.Object Loadratioraw_224 {get { return GetParameter(224); }set { SetParameter(224, value); }}
+	/// <summary>PID: 224  | Type: read</summary>
+	public System.Object Loadratioraw {get { return GetParameter(224); }set { SetParameter(224, value); }}
+	/// <summary>PID: 230  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ambienttemperature_401 {get { return GetParameter(401); }set { SetParameter(401, value); }}
-	/// <summary>PID: 401  | Type: read</summary>
-	public System.Object Ambienttemperature {get { return GetParameter(401); }set { SetParameter(401, value); }}
-	/// <summary>PID: 402  | Type: read | DISCREETS: Off = 0, On = 1</summary>
+	public System.Object Internaltemperatureraw_230 {get { return GetParameter(230); }set { SetParameter(230, value); }}
+	/// <summary>PID: 230  | Type: read</summary>
+	public System.Object Internaltemperatureraw {get { return GetParameter(230); }set { SetParameter(230, value); }}
+	/// <summary>PID: 231  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Fanstatus_402 {get { return GetParameter(402); }set { SetParameter(402, value); }}
-	/// <summary>PID: 402  | Type: read | DISCREETS: Off = 0, On = 1</summary>
-	public System.Object Fanstatus {get { return GetParameter(402); }set { SetParameter(402, value); }}
-	/// <summary>PID: 403  | Type: read | DISCREETS: Disabled = 0, Enabled = 1</summary>
+	public System.Object Ambienttemperatureraw_231 {get { return GetParameter(231); }set { SetParameter(231, value); }}
+	/// <summary>PID: 231  | Type: read</summary>
+	public System.Object Ambienttemperatureraw {get { return GetParameter(231); }set { SetParameter(231, value); }}
+	/// <summary>PID: 250  | Type: write</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmsoundstatus_403 {get { return GetParameter(403); }set { SetParameter(403, value); }}
-	/// <summary>PID: 403  | Type: read | DISCREETS: Disabled = 0, Enabled = 1</summary>
-	public System.Object Alarmsoundstatus {get { return GetParameter(403); }set { SetParameter(403, value); }}
-	/// <summary>PID: 500  | Type: read</summary>
+	public System.Object Systemtimeraw_250 {get { return GetParameter(250); }set { SetParameter(250, value); }}
+	/// <summary>PID: 1001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmcode_500 {get { return GetParameter(500); }set { SetParameter(500, value); }}
-	/// <summary>PID: 500  | Type: read</summary>
-	public System.Object Alarmcode {get { return GetParameter(500); }set { SetParameter(500, value); }}
-	/// <summary>PID: 501  | Type: read</summary>
+	public System.Object Alarmstatusbit_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	/// <summary>PID: 1001  | Type: read</summary>
+	public System.Object Alarmstatusbit {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	/// <summary>PID: 1002  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Activealarmsummary_501 {get { return GetParameter(501); }set { SetParameter(501, value); }}
-	/// <summary>PID: 501  | Type: read</summary>
-	public System.Object Activealarmsummary {get { return GetParameter(501); }set { SetParameter(501, value); }}
-	/// <summary>PID: 502  | Type: read</summary>
+	public System.Object Alarmstatusmask_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	/// <summary>PID: 1002  | Type: read</summary>
+	public System.Object Alarmstatusmask {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	/// <summary>PID: 1003  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Activealarmcount_502 {get { return GetParameter(502); }set { SetParameter(502, value); }}
-	/// <summary>PID: 502  | Type: read</summary>
-	public System.Object Activealarmcount {get { return GetParameter(502); }set { SetParameter(502, value); }}
-	/// <summary>PID: 601  | Type: read</summary>
+	public System.Object Alarmstatusdescription_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	/// <summary>PID: 1003  | Type: read</summary>
+	public System.Object Alarmstatusdescription {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	/// <summary>PID: 1004  | Type: read | DISCREETS: Inactive = 0, Active = 1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusbit_601 {get { return GetParameter(601); }set { SetParameter(601, value); }}
-	/// <summary>PID: 601  | Type: read</summary>
-	public System.Object Alarmstatusbit {get { return GetParameter(601); }set { SetParameter(601, value); }}
-	/// <summary>PID: 602  | Type: read</summary>
+	public System.Object Alarmstatusstate_1004 {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	/// <summary>PID: 1004  | Type: read | DISCREETS: Inactive = 0, Active = 1</summary>
+	public System.Object Alarmstatusstate {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	/// <summary>PID: 1005  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusmask_602 {get { return GetParameter(602); }set { SetParameter(602, value); }}
-	/// <summary>PID: 602  | Type: read</summary>
-	public System.Object Alarmstatusmask {get { return GetParameter(602); }set { SetParameter(602, value); }}
-	/// <summary>PID: 603  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusdescription_603 {get { return GetParameter(603); }set { SetParameter(603, value); }}
-	/// <summary>PID: 603  | Type: read</summary>
-	public System.Object Alarmstatusdescription {get { return GetParameter(603); }set { SetParameter(603, value); }}
-	/// <summary>PID: 604  | Type: read | DISCREETS: Inactive = 0, Active = 1</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusstate_604 {get { return GetParameter(604); }set { SetParameter(604, value); }}
-	/// <summary>PID: 604  | Type: read | DISCREETS: Inactive = 0, Active = 1</summary>
-	public System.Object Alarmstatusstate {get { return GetParameter(604); }set { SetParameter(604, value); }}
-	/// <summary>PID: 605  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusvalue_605 {get { return GetParameter(605); }set { SetParameter(605, value); }}
-	/// <summary>PID: 605  | Type: read</summary>
-	public System.Object Alarmstatusvalue {get { return GetParameter(605); }set { SetParameter(605, value); }}
-	/// <summary>PID: 1110  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Systemtimeraw_1110 {get { return GetParameter(1110); }set { SetParameter(1110, value); }}
-	/// <summary>PID: 1110  | Type: read</summary>
-	public System.Object Systemtimeraw {get { return GetParameter(1110); }set { SetParameter(1110, value); }}
-	/// <summary>PID: 1160  | Type: write</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Systemtimeraw_1160 {get { return GetParameter(1160); }set { SetParameter(1160, value); }}
-	/// <summary>PID: 1200  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Dcvoltageraw_1200 {get { return GetParameter(1200); }set { SetParameter(1200, value); }}
-	/// <summary>PID: 1200  | Type: read</summary>
-	public System.Object Dcvoltageraw {get { return GetParameter(1200); }set { SetParameter(1200, value); }}
-	/// <summary>PID: 1201  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Acvoltageraw_1201 {get { return GetParameter(1201); }set { SetParameter(1201, value); }}
-	/// <summary>PID: 1201  | Type: read</summary>
-	public System.Object Acvoltageraw {get { return GetParameter(1201); }set { SetParameter(1201, value); }}
-	/// <summary>PID: 1202  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Acfrequencyraw_1202 {get { return GetParameter(1202); }set { SetParameter(1202, value); }}
-	/// <summary>PID: 1202  | Type: read</summary>
-	public System.Object Acfrequencyraw {get { return GetParameter(1202); }set { SetParameter(1202, value); }}
-	/// <summary>PID: 1300  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Workfrequencyraw_1300 {get { return GetParameter(1300); }set { SetParameter(1300, value); }}
-	/// <summary>PID: 1300  | Type: read</summary>
-	public System.Object Workfrequencyraw {get { return GetParameter(1300); }set { SetParameter(1300, value); }}
-	/// <summary>PID: 1301  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Outputvoltageraw_1301 {get { return GetParameter(1301); }set { SetParameter(1301, value); }}
-	/// <summary>PID: 1301  | Type: read</summary>
-	public System.Object Outputvoltageraw {get { return GetParameter(1301); }set { SetParameter(1301, value); }}
-	/// <summary>PID: 1302  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Outputcurrentraw_1302 {get { return GetParameter(1302); }set { SetParameter(1302, value); }}
-	/// <summary>PID: 1302  | Type: read</summary>
-	public System.Object Outputcurrentraw {get { return GetParameter(1302); }set { SetParameter(1302, value); }}
-	/// <summary>PID: 1303  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Outputpowerraw_1303 {get { return GetParameter(1303); }set { SetParameter(1303, value); }}
-	/// <summary>PID: 1303  | Type: read</summary>
-	public System.Object Outputpowerraw {get { return GetParameter(1303); }set { SetParameter(1303, value); }}
-	/// <summary>PID: 1304  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Loadratioraw_1304 {get { return GetParameter(1304); }set { SetParameter(1304, value); }}
-	/// <summary>PID: 1304  | Type: read</summary>
-	public System.Object Loadratioraw {get { return GetParameter(1304); }set { SetParameter(1304, value); }}
-	/// <summary>PID: 1400  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Internaltemperatureraw_1400 {get { return GetParameter(1400); }set { SetParameter(1400, value); }}
-	/// <summary>PID: 1400  | Type: read</summary>
-	public System.Object Internaltemperatureraw {get { return GetParameter(1400); }set { SetParameter(1400, value); }}
-	/// <summary>PID: 1401  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Ambienttemperatureraw_1401 {get { return GetParameter(1401); }set { SetParameter(1401, value); }}
-	/// <summary>PID: 1401  | Type: read</summary>
-	public System.Object Ambienttemperatureraw {get { return GetParameter(1401); }set { SetParameter(1401, value); }}
+	public System.Object Alarmstatusvalue_1005 {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
+	/// <summary>PID: 1005  | Type: read</summary>
+	public System.Object Alarmstatusvalue {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{
-		alarmstatus = new AlarmstatusQActionTable(this, 600, "alarmstatus");
+		alarmstatus = new AlarmstatusQActionTable(this, 1000, "alarmstatus");
 		Write = new WriteParameters(this);
 	}
 }
@@ -642,30 +642,30 @@ public class AlarmstatusQActionTable : QActionTable, IEnumerable<AlarmstatusQAct
 /// <summary>IDX: 0</summary>
 public class AlarmstatusQActionRow : QActionTableRow
 {
-	/// <summary>PID: 601 | Type: read</summary>
+	/// <summary>PID: 1001 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusbit_601 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
-	/// <summary>PID: 601 | Type: read</summary>
+	public System.Object Alarmstatusbit_1001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	/// <summary>PID: 1001 | Type: read</summary>
 	public System.Object Alarmstatusbit { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
-	/// <summary>PID: 602 | Type: read</summary>
+	/// <summary>PID: 1002 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusmask_602 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
-	/// <summary>PID: 602 | Type: read</summary>
+	public System.Object Alarmstatusmask_1002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	/// <summary>PID: 1002 | Type: read</summary>
 	public System.Object Alarmstatusmask { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
-	/// <summary>PID: 603 | Type: read</summary>
+	/// <summary>PID: 1003 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusdescription_603 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
-	/// <summary>PID: 603 | Type: read</summary>
+	public System.Object Alarmstatusdescription_1003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	/// <summary>PID: 1003 | Type: read</summary>
 	public System.Object Alarmstatusdescription { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
-	/// <summary>PID: 604 | Type: read</summary>
+	/// <summary>PID: 1004 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusstate_604 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
-	/// <summary>PID: 604 | Type: read</summary>
+	public System.Object Alarmstatusstate_1004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 1004 | Type: read</summary>
 	public System.Object Alarmstatusstate { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
-	/// <summary>PID: 605 | Type: read</summary>
+	/// <summary>PID: 1005 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Alarmstatusvalue_605 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
-	/// <summary>PID: 605 | Type: read</summary>
+	public System.Object Alarmstatusvalue_1005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 1005 | Type: read</summary>
 	public System.Object Alarmstatusvalue { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
 	public AlarmstatusQActionRow() : base(0, 5) { }
 	public AlarmstatusQActionRow(System.Object[] oRow) : base(0, 5, oRow) { }

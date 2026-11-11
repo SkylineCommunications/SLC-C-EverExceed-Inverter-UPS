@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>EverExceed Inverter UPS</Name>
 	<Description>EverExceed Inverter UPS DataMiner connector</Description>
@@ -8,16 +8,14 @@
 	<Vendor>EverExceed</Vendor>
 	<VendorOID>1.3.6.1.4.1.8813.2.2362</VendorOID>
 	<DeviceOID>1</DeviceOID>
-	<Display defaultPage="General" pageOrder="General;----------;Alarms;Utility;----------;Options;----------;Webinterface#http://[Polling Ip]/" wideColumnPages="" />
+	<Display defaultPage="General" pageOrder="General;----------;Alarms;Utility;----------;Options;----------;Webinterface#http://[Polling Ip]/" wideColumnPages="Alarms" />
 	<SNMP includepages="true">auto</SNMP>
 	<ElementType>Inverter</ElementType>
 	<Type relativeTimers="true" options=";unicode">snmpv2</Type>
-
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
 		<MinimumRequiredVersion>10.4.0.0 - 14003</MinimumRequiredVersion>
 	</Compliancies>
-
 	<Params>
 		<Param id="10">
 			<Name>dataDisplayTitleBegin</Name>
@@ -57,11 +55,6 @@
 					</Position>
 					<Position>
 						<Page>General</Page>
-						<Column>0</Column>
-						<Row>12</Row>
-					</Position>
-					<Position>
-						<Page>General</Page>
 						<Column>1</Column>
 						<Row>7</Row>
 					</Position>
@@ -90,6 +83,11 @@
 						<Column>0</Column>
 						<Row>4</Row>
 					</Position>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>11</Row>
+					</Position>
 				</Positions>
 			</Display>
 			<Measurement>
@@ -117,7 +115,7 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="14">
+		<Param id="13">
 			<Name>measurementsTitleBegin</Name>
 			<Description>Data Display - Frequency, Load and Temperature</Description>
 			<Information>
@@ -138,7 +136,7 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="20">
+		<Param id="14">
 			<Name>alarmSummaryTitleBegin</Name>
 			<Description>Alarm Summary Overview</Description>
 			<Information>
@@ -159,7 +157,7 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="30">
+		<Param id="15">
 			<Name>systemTimeTitleBegin</Name>
 			<Description>System Time Settings</Description>
 			<Information>
@@ -180,7 +178,7 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="32">
+		<Param id="16">
 			<Name>timerTitleBegin</Name>
 			<Description>Turn off Timer Settings</Description>
 			<Information>
@@ -201,7 +199,7 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="34">
+		<Param id="17">
 			<Name>alarmRecordTitleBegin</Name>
 			<Description>Alarm Record Management</Description>
 			<Information>
@@ -222,7 +220,7 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="40">
+		<Param id="18">
 			<Name>productTitleBegin</Name>
 			<Description>Product Information Details</Description>
 			<Information>
@@ -243,6 +241,145 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
+		<Param id="20">
+			<Name>alarmCode</Name>
+			<Description>Alarm Code</Description>
+			<Information>
+				<Subtext>Raw 16-bit alarm status register.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.11.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<!-- SuppressValidator 2.5.1 No default threshold values available. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<!-- SuppressValidator 2.9.7 Unknown Units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="21">
+			<Name>activeAlarmSummary</Name>
+			<Description>Active Alarms</Description>
+			<Information>
+				<Subtext>Names of the active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="22" trending="true">
+			<Name>activeAlarmCount</Name>
+			<Description>Active Alarm Count</Description>
+			<Information>
+				<Subtext>Number of active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 No default threshold values available. -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<!-- SuppressValidator 2.9.7 Unknown Units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>16</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="50">
+			<Name>syncSystemTime</Name>
+			<Description>Synchronize System Time</Description>
+			<Information>
+				<Subtext>Set the device time to the current DataMiner time.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type width="110">button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Sync With DMA</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
 		<Param id="100">
 			<Name>productName</Name>
 			<Description>Product Name</Description>
@@ -255,6 +392,11 @@
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.1.1.0</OID>
+				<Type>octetstring</Type>
+			</SNMP>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -268,11 +410,6 @@
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.1.1.0</OID>
-				<Type>octetstring</Type>
-			</SNMP>
 		</Param>
 		<Param id="101">
 			<Name>firmwareVersion</Name>
@@ -286,6 +423,11 @@
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.1.2.0</OID>
+				<Type>octetstring</Type>
+			</SNMP>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -299,11 +441,6 @@
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.1.2.0</OID>
-				<Type>octetstring</Type>
-			</SNMP>
 		</Param>
 		<Param id="102">
 			<Name>firmwareDate</Name>
@@ -317,6 +454,11 @@
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.1.3.0</OID>
+				<Type>octetstring</Type>
+			</SNMP>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -330,11 +472,6 @@
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.1.3.0</OID>
-				<Type>octetstring</Type>
-			</SNMP>
 		</Param>
 		<Param id="110">
 			<Name>systemTime</Name>
@@ -415,6 +552,11 @@
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
+				<Type>integer</Type>
+			</SNMP>
 			<Alarm>
 				<Monitored>true</Monitored>
 				<Normal>172</Normal>
@@ -443,119 +585,6 @@
 					</Discreet>
 				</Discreets>
 			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="114">
-			<Name>offTimer</Name>
-			<Description>Turn off Timer</Description>
-			<Information>
-				<Subtext>Turn off timer in minutes (offTimer).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>min</Units>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="115">
-			<Name>clearAlarmRecord</Name>
-			<Description>Clear Alarm Record</Description>
-			<Information>
-				<Subtext>Clear alarm record register value (clearAlarmRecord).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unknown Units
- -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>8</Row>
-					</Position>
-				</Positions>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="160">
-			<Name>syncSystemTime</Name>
-			<Description>Synchronize System Time</Description>
-			<Information>
-				<Subtext>Set the device time to the current DataMiner time.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type width="110">button</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Sync With DMA</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
 		</Param>
 		<Param id="162" snmpSetAndGet="true">
 			<Name>mainSupplyPriority</Name>
@@ -569,6 +598,11 @@
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
+				<Type>integer</Type>
+			</SNMP>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -592,24 +626,24 @@
 					</Discreet>
 				</Discreets>
 			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
-				<Type>integer</Type>
-			</SNMP>
 		</Param>
-		<Param id="164" snmpSetAndGet="true">
+		<Param id="113">
 			<Name>offTimer</Name>
 			<Description>Turn off Timer</Description>
 			<Information>
-				<Subtext>Set the turn off timer in minutes.</Subtext>
+				<Subtext>Turn off timer in minutes (offTimer).</Subtext>
 			</Information>
-			<Type>write</Type>
+			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
+				<Type>integer</Type>
+			</SNMP>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -629,13 +663,83 @@
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
+		</Param>
+		<Param id="163" snmpSetAndGet="true">
+			<Name>offTimer</Name>
+			<Description>Turn off Timer</Description>
+			<Information>
+				<Subtext>Set the turn off timer in minutes.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
 			<SNMP>
 				<Enabled>true</Enabled>
 				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
 				<Type>integer</Type>
 			</SNMP>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<Units>min</Units>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
 		</Param>
-		<Param id="165" snmpSetAndGet="true">
+		<Param id="114">
+			<Name>clearAlarmRecord</Name>
+			<Description>Clear Alarm Record</Description>
+			<Information>
+				<Subtext>Clear alarm record register value (clearAlarmRecord).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<!-- SuppressValidator 2.9.7 Unknown Units -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>8</Row>
+					</Position>
+				</Positions>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="164" snmpSetAndGet="true">
 			<Name>clearAlarmRecord</Name>
 			<Description>Clear Alarm Record</Description>
 			<Information>
@@ -647,6 +751,11 @@
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
+				<Type>integer</Type>
+			</SNMP>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -666,13 +775,8 @@
 					</Discreet>
 				</Discreets>
 			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
-				<Type>integer</Type>
-			</SNMP>
 		</Param>
-		<Param id="200" trending="true">
+		<Param id="120" trending="true">
 			<Name>dcVoltage</Name>
 			<Description>DC Voltage</Description>
 			<Information>
@@ -709,7 +813,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="201" trending="true">
+		<Param id="121" trending="true">
 			<Name>acVoltage</Name>
 			<Description>AC Voltage</Description>
 			<Information>
@@ -746,7 +850,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="202" trending="true">
+		<Param id="122" trending="true">
 			<Name>acFrequency</Name>
 			<Description>AC Frequency</Description>
 			<Information>
@@ -783,7 +887,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="300" trending="true">
+		<Param id="130" trending="true">
 			<Name>workFrequency</Name>
 			<Description>Work Frequency</Description>
 			<Information>
@@ -820,7 +924,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="301" trending="true">
+		<Param id="131" trending="true">
 			<Name>outputVoltage</Name>
 			<Description>Output Voltage</Description>
 			<Information>
@@ -857,7 +961,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="302" trending="true">
+		<Param id="132" trending="true">
 			<Name>outputCurrent</Name>
 			<Description>Output Current</Description>
 			<Information>
@@ -894,7 +998,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="303" trending="true">
+		<Param id="133" trending="true">
 			<Name>outputPower</Name>
 			<Description>Output Power</Description>
 			<Information>
@@ -931,7 +1035,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="304" trending="true">
+		<Param id="134" trending="true">
 			<Name>loadRatio</Name>
 			<Description>Load Ratio</Description>
 			<Information>
@@ -969,7 +1073,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="400" trending="true">
+		<Param id="140" trending="true">
 			<Name>internalTemperature</Name>
 			<Description>Internal Temperature</Description>
 			<Information>
@@ -1006,7 +1110,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="401" trending="true">
+		<Param id="141" trending="true">
 			<Name>ambientTemperature</Name>
 			<Description>Ambient Temperature</Description>
 			<Information>
@@ -1043,7 +1147,7 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="402" trending="true">
+		<Param id="142" trending="true">
 			<Name>fanStatus</Name>
 			<Description>Fan Status</Description>
 			<Information>
@@ -1084,7 +1188,7 @@
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="403" trending="true">
+		<Param id="143" trending="true">
 			<Name>alarmSoundStatus</Name>
 			<Description>Alarm Sound Status</Description>
 			<Information>
@@ -1125,50 +1229,11 @@
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="500">
-			<Name>alarmCode</Name>
-			<Description>Alarm Code</Description>
+		<Param id="200" setter="true">
+			<Name>systemTimeRaw</Name>
+			<Description>System Time Raw</Description>
 			<Information>
-				<Subtext>Raw 16-bit alarm status register.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unknown Units
- -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>3</Row>
-					</Position>
-				</Positions>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.11.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="501">
-			<Name>activeAlarmSummary</Name>
-			<Description>Active Alarms</Description>
-			<Information>
-				<Subtext>Names of the active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
+				<Subtext>Raw DateAndTime octet string.</Subtext>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -1176,25 +1241,47 @@
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.13.0</OID>
+				<Type>octetstringhex</Type>
+			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
+				<RTDisplay>false</RTDisplay>
 			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="502" trending="true">
-			<Name>activeAlarmCount</Name>
-			<Description>Active Alarm Count</Description>
+		<Param id="250" snmpSetAndGet="true">
+			<Name>systemTimeRaw</Name>
+			<Description>System Time Raw</Description>
 			<Information>
-				<Subtext>Number of active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
+				<Subtext>Raw DateAndTime octet string to set.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.13.0</OID>
+				<Type>octetstringhex</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="210">
+			<Name>dcVoltageRaw</Name>
+			<Description>DC Voltage Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -1202,29 +1289,235 @@
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unknown Units
- -->
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.1.0</OID>
+				<Type>integer</Type>
+			</SNMP>
 			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>16</High>
-				</Range>
+				<RTDisplay>false</RTDisplay>
 			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="600">
+		<Param id="211">
+			<Name>acVoltageRaw</Name>
+			<Description>AC Voltage Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.2.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="212">
+			<Name>acFrequencyRaw</Name>
+			<Description>AC Frequency Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.3.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="220">
+			<Name>workFrequencyRaw</Name>
+			<Description>Work Frequency Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.4.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="221">
+			<Name>outputVoltageRaw</Name>
+			<Description>Output Voltage Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.5.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="222">
+			<Name>outputCurrentRaw</Name>
+			<Description>Output Current Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.6.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="223">
+			<Name>outputPowerRaw</Name>
+			<Description>Output Power Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.7.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="224">
+			<Name>loadRatioRaw</Name>
+			<Description>Load Ratio Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.8.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="230">
+			<Name>internalTemperatureRaw</Name>
+			<Description>Internal Temperature Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.9.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="231">
+			<Name>ambientTemperatureRaw</Name>
+			<Description>Ambient Temperature Raw</Description>
+			<Information>
+				<Subtext>Raw SNMP value.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.10.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="1000">
 			<Name>alarmStatus</Name>
 			<Description>Alarm Code Bit Status</Description>
 			<Information>
@@ -1232,11 +1525,11 @@
 			</Information>
 			<Type>array</Type>
 			<ArrayOptions index="0">
-				<ColumnOption idx="0" pid="601" type="retrieved" options="" />
-				<ColumnOption idx="1" pid="602" type="retrieved" options="" />
-				<ColumnOption idx="2" pid="603" type="retrieved" options="" />
-				<ColumnOption idx="3" pid="604" type="retrieved" options="" />
-				<ColumnOption idx="4" pid="605" type="retrieved" options="" />
+				<ColumnOption idx="0" pid="1001" type="retrieved" options="" />
+				<ColumnOption idx="1" pid="1002" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="1003" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="1004" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="1005" type="retrieved" options="" />
 			</ArrayOptions>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1249,10 +1542,10 @@
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:601|0-602|1-603|2-604|3-605|4,width:70-80-220-90-140,sort:STRING-STRING-STRING-INT-STRING,lines:16,filter:true">table</Type>
+				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4,width:70-80-220-90-140,sort:STRING-STRING-STRING-INT-STRING,lines:16,filter:true">table</Type>
 			</Measurement>
 		</Param>
-		<Param id="601">
+		<Param id="1001">
 			<Name>alarmStatusBit</Name>
 			<Description>Bit (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1271,7 +1564,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="602">
+		<Param id="1002">
 			<Name>alarmStatusMask</Name>
 			<Description>Mask (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1290,7 +1583,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="603">
+		<Param id="1003">
 			<Name>alarmStatusDescription</Name>
 			<Description>Description (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1309,7 +1602,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="604">
+		<Param id="1004">
 			<Name>alarmStatusState</Name>
 			<Description>State (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1343,7 +1636,7 @@
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="605">
+		<Param id="1005">
 			<Name>alarmStatusValue</Name>
 			<Description>Value (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1362,308 +1655,18 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1110" setter="true">
-			<Name>systemTimeRaw</Name>
-			<Description>System Time Raw</Description>
-			<Information>
-				<Subtext>Raw DateAndTime octet string.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.13.0</OID>
-				<Type>octetstringhex</Type>
-			</SNMP>
-		</Param>
-		<Param id="1160" snmpSetAndGet="true">
-			<Name>systemTimeRaw</Name>
-			<Description>System Time Raw</Description>
-			<Information>
-				<Subtext>Raw DateAndTime octet string to set.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.13.0</OID>
-				<Type>octetstringhex</Type>
-			</SNMP>
-		</Param>
-		<Param id="1200">
-			<Name>dcVoltageRaw</Name>
-			<Description>DC Voltage Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.1.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1201">
-			<Name>acVoltageRaw</Name>
-			<Description>AC Voltage Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.2.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1202">
-			<Name>acFrequencyRaw</Name>
-			<Description>AC Frequency Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.3.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1300">
-			<Name>workFrequencyRaw</Name>
-			<Description>Work Frequency Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.4.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1301">
-			<Name>outputVoltageRaw</Name>
-			<Description>Output Voltage Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.5.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1302">
-			<Name>outputCurrentRaw</Name>
-			<Description>Output Current Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.6.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1303">
-			<Name>outputPowerRaw</Name>
-			<Description>Output Power Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.7.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1304">
-			<Name>loadRatioRaw</Name>
-			<Description>Load Ratio Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.8.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1400">
-			<Name>internalTemperatureRaw</Name>
-			<Description>Internal Temperature Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.9.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="1401">
-			<Name>ambientTemperatureRaw</Name>
-			<Description>Ambient Temperature Raw</Description>
-			<Information>
-				<Subtext>Raw SNMP value.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.10.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
 	</Params>
-
 	<QActions>
 		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="3" name="Process Raw Values" encoding="csharp" triggers="160;500;1110;1200;1201;1202;1300;1301;1302;1303;1304;1400;1401" />
+		<QAction id="3" name="Process Raw Values" encoding="csharp" triggers="50;20;200;210;211;212;220;221;222;223;224;230;231" />
 	</QActions>
-
 	<Groups>
 		<Group id="10">
 			<Name>Alarm Code</Name>
 			<Description>Alarm Code</Description>
 			<Type>poll</Type>
 			<Content>
-				<Param>500</Param>
+				<Param>20</Param>
 			</Content>
 		</Group>
 		<Group id="20">
@@ -1671,14 +1674,14 @@
 			<Description>Electrical</Description>
 			<Type>poll</Type>
 			<Content multipleGet="true">
-				<Param>1200</Param>
-				<Param>1201</Param>
-				<Param>1202</Param>
-				<Param>1300</Param>
-				<Param>1301</Param>
-				<Param>1302</Param>
-				<Param>1303</Param>
-				<Param>1304</Param>
+				<Param>210</Param>
+				<Param>211</Param>
+				<Param>212</Param>
+				<Param>220</Param>
+				<Param>221</Param>
+				<Param>222</Param>
+				<Param>223</Param>
+				<Param>224</Param>
 			</Content>
 		</Group>
 		<Group id="21">
@@ -1686,11 +1689,11 @@
 			<Description>Environment and Settings</Description>
 			<Type>poll</Type>
 			<Content multipleGet="true">
-				<Param>1400</Param>
-				<Param>1401</Param>
+				<Param>230</Param>
+				<Param>231</Param>
 				<Param>112</Param>
+				<Param>113</Param>
 				<Param>114</Param>
-				<Param>115</Param>
 			</Content>
 		</Group>
 		<Group id="30">
@@ -1698,7 +1701,7 @@
 			<Description>System Time</Description>
 			<Type>poll</Type>
 			<Content>
-				<Param>1110</Param>
+				<Param>200</Param>
 			</Content>
 		</Group>
 		<Group id="40">
@@ -1712,7 +1715,6 @@
 			</Content>
 		</Group>
 	</Groups>
-
 	<Timers>
 		<Timer id="1">
 			<Name>Fast Timer (10s)</Name>
@@ -1748,13 +1750,11 @@
 			</Content>
 		</Timer>
 	</Timers>
-
 	<PortSettings name="SNMP Connection">
 		<IPport>
 			<DefaultValue>161</DefaultValue>
 		</IPport>
 	</PortSettings>
-
 	<VersionHistory>
 		<Branches>
 			<Branch id="1">
@@ -1782,5 +1782,4 @@
 			</Branch>
 		</Branches>
 	</VersionHistory>
-
 </Protocol>
