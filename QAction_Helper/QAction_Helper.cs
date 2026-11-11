@@ -297,23 +297,15 @@ public interface SLProtocolExt : SLProtocol
 {
 	/// <summary>PID: 600</summary>
 	AlarmstatusQActionTable alarmstatus { get; set; }
-	object Afterstartup_dummy { get; set; }
 	object Datadisplaytitlebegin__fixed { get; set; }
-	object Datadisplaytitleend__fixed { get; set; }
+	object Generictitleend__fixed { get; set; }
 	object Parametersettingtitlebegin__fixed { get; set; }
-	object Parametersettingtitleend__fixed { get; set; }
 	object Measurementstitlebegin__fixed { get; set; }
-	object Measurementstitleend__fixed { get; set; }
 	object Alarmsummarytitlebegin__fixed { get; set; }
-	object Alarmsummarytitleend__fixed { get; set; }
 	object Systemtimetitlebegin__fixed { get; set; }
-	object Systemtimetitleend__fixed { get; set; }
 	object Timertitlebegin__fixed { get; set; }
-	object Timertitleend__fixed { get; set; }
 	object Alarmrecordtitlebegin__fixed { get; set; }
-	object Alarmrecordtitleend__fixed { get; set; }
 	object Producttitlebegin__fixed { get; set; }
-	object Producttitleend__fixed { get; set; }
 	object Productname_100 { get; set; }
 	object Productname { get; set; }
 	object Firmwareversion_101 { get; set; }
@@ -404,40 +396,24 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 {
 	/// <summary>PID: 600</summary>
 	public AlarmstatusQActionTable alarmstatus { get; set; }
-	/// <summary>PID: 2  | Type: dummy</summary>
-	public System.Object Afterstartup_dummy {get { return GetParameter(2); }set { SetParameter(2, value); }}
 	/// <summary>PID: 10  | Type: fixed</summary>
 	public System.Object Datadisplaytitlebegin__fixed {get { return GetParameter(10); }set { SetParameter(10, value); }}
 	/// <summary>PID: 11  | Type: fixed</summary>
-	public System.Object Datadisplaytitleend__fixed {get { return GetParameter(11); }set { SetParameter(11, value); }}
+	public System.Object Generictitleend__fixed {get { return GetParameter(11); }set { SetParameter(11, value); }}
 	/// <summary>PID: 12  | Type: fixed</summary>
 	public System.Object Parametersettingtitlebegin__fixed {get { return GetParameter(12); }set { SetParameter(12, value); }}
-	/// <summary>PID: 13  | Type: fixed</summary>
-	public System.Object Parametersettingtitleend__fixed {get { return GetParameter(13); }set { SetParameter(13, value); }}
 	/// <summary>PID: 14  | Type: fixed</summary>
 	public System.Object Measurementstitlebegin__fixed {get { return GetParameter(14); }set { SetParameter(14, value); }}
-	/// <summary>PID: 15  | Type: fixed</summary>
-	public System.Object Measurementstitleend__fixed {get { return GetParameter(15); }set { SetParameter(15, value); }}
 	/// <summary>PID: 20  | Type: fixed</summary>
 	public System.Object Alarmsummarytitlebegin__fixed {get { return GetParameter(20); }set { SetParameter(20, value); }}
-	/// <summary>PID: 21  | Type: fixed</summary>
-	public System.Object Alarmsummarytitleend__fixed {get { return GetParameter(21); }set { SetParameter(21, value); }}
 	/// <summary>PID: 30  | Type: fixed</summary>
 	public System.Object Systemtimetitlebegin__fixed {get { return GetParameter(30); }set { SetParameter(30, value); }}
-	/// <summary>PID: 31  | Type: fixed</summary>
-	public System.Object Systemtimetitleend__fixed {get { return GetParameter(31); }set { SetParameter(31, value); }}
 	/// <summary>PID: 32  | Type: fixed</summary>
 	public System.Object Timertitlebegin__fixed {get { return GetParameter(32); }set { SetParameter(32, value); }}
-	/// <summary>PID: 33  | Type: fixed</summary>
-	public System.Object Timertitleend__fixed {get { return GetParameter(33); }set { SetParameter(33, value); }}
 	/// <summary>PID: 34  | Type: fixed</summary>
 	public System.Object Alarmrecordtitlebegin__fixed {get { return GetParameter(34); }set { SetParameter(34, value); }}
-	/// <summary>PID: 35  | Type: fixed</summary>
-	public System.Object Alarmrecordtitleend__fixed {get { return GetParameter(35); }set { SetParameter(35, value); }}
 	/// <summary>PID: 40  | Type: fixed</summary>
 	public System.Object Producttitlebegin__fixed {get { return GetParameter(40); }set { SetParameter(40, value); }}
-	/// <summary>PID: 41  | Type: fixed</summary>
-	public System.Object Producttitleend__fixed {get { return GetParameter(41); }set { SetParameter(41, value); }}
 	/// <summary>PID: 100  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Productname_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}

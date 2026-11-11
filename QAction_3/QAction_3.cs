@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,19 +12,6 @@ using Skyline.DataMiner.Scripting;
 /// </summary>
 public static class QAction
 {
-    private const int SystemTimeRawPid = Parameter.systemtimeraw;
-    private const int AlarmCodePid = Parameter.alarmcode;
-
-    private const int InverterStatusPid = Parameter.inverterstatus;
-    private const int SystemTimePid = Parameter.systemtime;
-    private const int FanStatusPid = Parameter.fanstatus;
-    private const int SoundStatusPid = Parameter.alarmsoundstatus;
-    private const int ActiveAlarmSummaryPid = Parameter.activealarmsummary;
-    private const int ActiveAlarmCountPid = Parameter.activealarmcount;
-    private const int AlarmStatusTablePid = Parameter.Alarmstatus.tablePid;
-    private const int SyncSystemTimePid = Parameter.Write.syncsystemtime;
-    private const int SystemTimeRawWritePid = Parameter.Write.systemtimeraw;
-
     /// <summary>Alarm Code bit definitions (MIB alarmCode): description, text for 0, text for 1.</summary>
     private static readonly string[][] AlarmBitDefinitions =
     {
@@ -89,85 +76,33 @@ public static class QAction
             int trigger = protocol.GetTriggerParameter();
             object value = protocol.GetParameter(trigger);
 
-            if (trigger == SyncSystemTimePid)
+            switch (trigger)
             {
-                protocol.SetParameter(SystemTimeRawWritePid, EncodeDateAndTime(DateTime.Now));
-            }
-            else if (trigger == AlarmCodePid)
-            {
-                ProcessAlarmCode(protocol, value);
-            }
-            else if (trigger == SystemTimeRawPid)
-            {
-                protocol.SetParameter(SystemTimePid, DecodeDateAndTime(Convert.ToString(value, CultureInfo.InvariantCulture)));
-            }
-            else if (ScaledParameters.TryGetValue(trigger, out var scaling))
-            {
-                ProcessScaledValue(protocol, value, scaling);
+                case Parameter.Write.syncsystemtime:
+                    protocol.SetParameter(Parameter.systemtimeraw, EncodeDateAndTime(DateTime.Now));
+                    break;
+
+                case Parameter.alarmcode:
+                    ProcessAlarmCode(protocol, value);
+                    break;
+
+                case Parameter.systemtimeraw:
+                    protocol.SetParameter(Parameter.systemtime, DecodeDateAndTime(Convert.ToString(value, CultureInfo.InvariantCulture)));
+                    break;
+
+                default:
+                    if (ScaledParameters.TryGetValue(trigger, out var scaling))
+                    {
+                        ProcessScaledValue(protocol, value, scaling);
+                    }
+
+                    break;
             }
         }
         catch (Exception ex)
         {
             protocol.Log($"QA{protocol.QActionID}|{protocol.GetTriggerParameter()}|Run|Exception thrown:{Environment.NewLine}{ex}", LogType.Error, LogLevel.NoLogging);
         }
-    }
-
-    private static void ProcessScaledValue(SLProtocol protocol, object value, Tuple<int, double, bool> scaling)
-    {
-        if (!TryGetNumber(value, out double raw))
-        {
-            return;
-        }
-
-        if (scaling.Item3 && raw > short.MaxValue)
-        {
-            raw -= 65536;
-        }
-
-        protocol.SetParameter(scaling.Item1, Math.Round(raw * scaling.Item2, 1));
-    }
-
-    private static void ProcessAlarmCode(SLProtocol protocol, object value)
-    {
-        if (!TryGetNumber(value, out double raw))
-        {
-            return;
-        }
-
-        int alarmCode = (int)raw & 0xFFFF;
-
-        var rows = new List<object[]>();
-        for (int bit = 0; bit < 16; bit++)
-        {
-            int state = GetBit(alarmCode, bit);
-            rows.Add(new object[]
-            {
-                String.Format(CultureInfo.InvariantCulture, "B{0:00}", bit),
-                String.Format(CultureInfo.InvariantCulture, "0x{0:X4}", 1 << bit),
-                AlarmBitDefinitions[bit][0],
-                state,
-                AlarmBitDefinitions[bit][1 + state],
-            });
-        }
-
-        protocol.FillArray(AlarmStatusTablePid, rows, NotifyProtocol.SaveOption.Full);
-
-        var pids = new List<int>();
-        var values = new List<object>();
-
-        var activeAlarms = AlarmBitNames.Where(a => GetBit(alarmCode, a.Key) == 1).Select(a => a.Value).ToList();
-
-        pids.AddRange(new[] { InverterStatusPid, FanStatusPid, SoundStatusPid, ActiveAlarmSummaryPid, ActiveAlarmCountPid });
-        values.AddRange(new object[]
-        {
-            GetBit(alarmCode, 0),
-            GetBit(alarmCode, 1),
-            GetBit(alarmCode, 2),
-            activeAlarms.Count > 0 ? String.Join(", ", activeAlarms) : "No Active Alarms",
-            activeAlarms.Count,
-        });
-
-        protocol.SetParameters(pids.ToArray(), values.ToArray());
     }
 
     /// <summary>
@@ -187,17 +122,6 @@ public static class QAction
             time.Minute,
             time.Second,
             time.Millisecond / 100);
-    }
-
-    private static int GetBit(int value, int bit)
-    {
-        return (value >> bit) & 1;
-    }
-
-    private static bool TryGetNumber(object value, out double result)
-    {
-        result = 0;
-        return value != null && Double.TryParse(Convert.ToString(value, CultureInfo.InvariantCulture), NumberStyles.Float, CultureInfo.InvariantCulture, out result);
     }
 
     /// <summary>
@@ -241,6 +165,72 @@ public static class QAction
             return "N/A";
         }
 
-        return new DateTime(year, month, day, hour, minute, second).ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+        return new DateTime(year, month, day, hour, minute, second, DateTimeKind.Unspecified).ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+    }
+
+    private static void ProcessScaledValue(SLProtocol protocol, object value, Tuple<int, double, bool> scaling)
+    {
+        if (!TryGetNumber(value, out double raw))
+        {
+            return;
+        }
+
+        if (scaling.Item3 && raw > short.MaxValue)
+        {
+            raw -= 65536;
+        }
+
+        protocol.SetParameter(scaling.Item1, Math.Round(raw * scaling.Item2, 1));
+    }
+
+    private static void ProcessAlarmCode(SLProtocol protocol, object value)
+    {
+        if (!TryGetNumber(value, out double raw))
+        {
+            return;
+        }
+
+        int alarmCode = (int)raw & 0xFFFF;
+
+        var rows = new List<object[]>();
+        for (int bit = 0; bit < 16; bit++)
+        {
+            int state = GetBit(alarmCode, bit);
+            rows.Add(new object[]
+            {
+                String.Format(CultureInfo.InvariantCulture, "B{0:00}", bit),
+                String.Format(CultureInfo.InvariantCulture, "0x{0:X4}", 1 << bit),
+                AlarmBitDefinitions[bit][0],
+                state,
+                AlarmBitDefinitions[bit][1 + state],
+            });
+        }
+
+        protocol.FillArray(Parameter.Alarmstatus.tablePid, rows, NotifyProtocol.SaveOption.Full);
+
+        var activeAlarms = AlarmBitNames.Where(a => GetBit(alarmCode, a.Key) == 1).Select(a => a.Value).ToList();
+
+        int[] pids = { Parameter.inverterstatus, Parameter.fanstatus, Parameter.alarmsoundstatus, Parameter.activealarmsummary, Parameter.activealarmcount };
+        object[] values =
+        {
+            GetBit(alarmCode, 0),
+            GetBit(alarmCode, 1),
+            GetBit(alarmCode, 2),
+            activeAlarms.Count > 0 ? String.Join(", ", activeAlarms) : "No Active Alarms",
+            activeAlarms.Count,
+        };
+
+        protocol.SetParameters(pids, values);
+    }
+
+    private static int GetBit(int value, int bit)
+    {
+        return (value >> bit) & 1;
+    }
+
+    private static bool TryGetNumber(object value, out double result)
+    {
+        result = 0;
+        return value != null && Double.TryParse(Convert.ToString(value, CultureInfo.InvariantCulture), NumberStyles.Float, CultureInfo.InvariantCulture, out result);
     }
 }

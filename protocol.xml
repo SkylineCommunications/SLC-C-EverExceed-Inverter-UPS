@@ -19,11 +19,6 @@
 	</Compliancies>
 
 	<Params>
-		<Param id="2">
-			<Name>afterStartup</Name>
-			<Description>After Startup</Description>
-			<Type>dummy</Type>
-		</Param>
 		<Param id="10">
 			<Name>dataDisplayTitleBegin</Name>
 			<Description>Data Display - Status, Voltage and Power</Description>
@@ -45,276 +40,9 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="111" trending="true">
-			<Name>inverterStatus</Name>
-			<Description>Inverter Status</Description>
-			<Information>
-				<Subtext>Inverter operating mode (Alarm Code bit B0).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Inverter</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Bypass</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="201" trending="true">
-			<Name>acVoltage</Name>
-			<Description>AC Voltage</Description>
-			<Information>
-				<Subtext>AC input voltage.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-				<Units>V</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>1000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="200" trending="true">
-			<Name>dcVoltage</Name>
-			<Description>DC Voltage</Description>
-			<Information>
-				<Subtext>DC input voltage.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>3</Row>
-					</Position>
-				</Positions>
-				<Units>V</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>1000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="301" trending="true">
-			<Name>outputVoltage</Name>
-			<Description>Output Voltage</Description>
-			<Information>
-				<Subtext>Output voltage.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>4</Row>
-					</Position>
-				</Positions>
-				<Units>V</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>1000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="303" trending="true">
-			<Name>outputPower</Name>
-			<Description>Output Power</Description>
-			<Information>
-				<Subtext>Output apparent power.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>VA</Units>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>100000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="400" trending="true">
-			<Name>internalTemperature</Name>
-			<Description>Internal Temperature</Description>
-			<Information>
-				<Subtext>Internal temperature.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>6</Row>
-					</Position>
-				</Positions>
-				<Units>deg C</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>-50</Low>
-					<High>150</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="402" trending="true">
-			<Name>fanStatus</Name>
-			<Description>Fan Status</Description>
-			<Information>
-				<Subtext>Fan status (Alarm Code bit B1).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>7</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Off</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>On</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
 		<Param id="11">
-			<Name>dataDisplayTitleEnd</Name>
-			<Description>Data Display - Status, Voltage and Power End</Description>
+			<Name>genericTitleEnd</Name>
+			<Description>Generic Title End</Description>
 			<Information>
 				<Subtext>Section end.</Subtext>
 			</Information>
@@ -327,10 +55,45 @@
 						<Column>0</Column>
 						<Row>8</Row>
 					</Position>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>12</Row>
+					</Position>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>7</Row>
+					</Position>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>6</Row>
+					</Position>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>9</Row>
+					</Position>
+					<Position>
+						<Page>Utility</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="end">title</Type>
+				<Type options="end;connect">title</Type>
 			</Measurement>
 		</Param>
 		<Param id="12">
@@ -354,73 +117,6 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="112" trending="true">
-			<Name>mainSupplyPriority</Name>
-			<Description>Main Supply Priority</Description>
-			<Information>
-				<Subtext>Main supply choice of the inverter (AC or DC priority).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>10</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>AC Priority</Display>
-						<Value>172</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DC Priority</Display>
-						<Value>220</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="13">
-			<Name>parameterSettingTitleEnd</Name>
-			<Description>Parameter Setting - Supply and Power End</Description>
-			<Information>
-				<Subtext>Section end.</Subtext>
-			</Information>
-			<Type>fixed</Type>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>12</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="end">title</Type>
-			</Measurement>
-		</Param>
 		<Param id="14">
 			<Name>measurementsTitleBegin</Name>
 			<Description>Data Display - Frequency, Load and Temperature</Description>
@@ -442,294 +138,6 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="202" trending="true">
-			<Name>acFrequency</Name>
-			<Description>AC Frequency</Description>
-			<Information>
-				<Subtext>AC input frequency.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-				<Units>Hz</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="300" trending="true">
-			<Name>workFrequency</Name>
-			<Description>Work Frequency</Description>
-			<Information>
-				<Subtext>Inverter work (output) frequency.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-				<Units>Hz</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="302" trending="true">
-			<Name>outputCurrent</Name>
-			<Description>Output Current</Description>
-			<Information>
-				<Subtext>Output current.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>3</Row>
-					</Position>
-				</Positions>
-				<Units>A</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>1000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="304" trending="true">
-			<Name>loadRatio</Name>
-			<Description>Load Ratio</Description>
-			<Information>
-				<Subtext>Load ratio.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>4</Row>
-					</Position>
-				</Positions>
-				<Units>%</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>200</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="401" trending="true">
-			<Name>ambientTemperature</Name>
-			<Description>Ambient Temperature</Description>
-			<Information>
-				<Subtext>External (ambient) temperature.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>deg C</Units>
-				<Decimals>1</Decimals>
-				<Range>
-					<Low>-50</Low>
-					<High>150</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="403" trending="true">
-			<Name>alarmSoundStatus</Name>
-			<Description>Alarm Sound Status</Description>
-			<Information>
-				<Subtext>Audible alarm (buzzer) status (Alarm Code bit B2).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>6</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Disabled</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Enabled</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="15">
-			<Name>measurementsTitleEnd</Name>
-			<Description>Data Display - Frequency, Load and Temperature End</Description>
-			<Information>
-				<Subtext>Section end.</Subtext>
-			</Information>
-			<Type>fixed</Type>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>1</Column>
-						<Row>7</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="end">title</Type>
-			</Measurement>
-		</Param>
-		<Param id="162" snmpSetAndGet="true">
-			<Name>mainSupplyPriority</Name>
-			<Description>Main Supply Priority</Description>
-			<Information>
-				<Subtext>Select the main supply of the inverter.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>10</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>togglebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>AC Priority</Display>
-						<Value>172</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DC Priority</Display>
-						<Value>220</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
 		<Param id="20">
 			<Name>alarmSummaryTitleBegin</Name>
 			<Description>Alarm Summary Overview</Description>
@@ -749,264 +157,6 @@
 			</Display>
 			<Measurement>
 				<Type options="begin">title</Type>
-			</Measurement>
-		</Param>
-		<Param id="501">
-			<Name>activeAlarmSummary</Name>
-			<Description>Active Alarms</Description>
-			<Information>
-				<Subtext>Names of the active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="502" trending="true">
-			<Name>activeAlarmCount</Name>
-			<Description>Active Alarm Count</Description>
-			<Information>
-				<Subtext>Number of active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unknown Units
- -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>16</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="500">
-			<Name>alarmCode</Name>
-			<Description>Alarm Code</Description>
-			<Information>
-				<Subtext>Raw 16-bit alarm status register.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unknown Units
- -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>3</Row>
-					</Position>
-				</Positions>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.11.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="21">
-			<Name>alarmSummaryTitleEnd</Name>
-			<Description>Alarm Summary Overview End</Description>
-			<Information>
-				<Subtext>Section end.</Subtext>
-			</Information>
-			<Type>fixed</Type>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>4</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="end">title</Type>
-			</Measurement>
-		</Param>
-		<Param id="600">
-			<Name>alarmStatus</Name>
-			<Description>Alarm Code Bit Status</Description>
-			<Information>
-				<Subtext>Decoded Alarm Code register bits B0-B15.</Subtext>
-			</Information>
-			<Type>array</Type>
-			<ArrayOptions index="0">
-				<ColumnOption idx="0" pid="601" type="retrieved" options="" />
-				<ColumnOption idx="1" pid="602" type="retrieved" options="" />
-				<ColumnOption idx="2" pid="603" type="retrieved" options="" />
-				<ColumnOption idx="3" pid="604" type="retrieved" options="" />
-				<ColumnOption idx="4" pid="605" type="retrieved" options="" />
-			</ArrayOptions>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Alarms</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="tab=columns:601|0-602|1-603|2-604|3-605|4,width:70-80-220-90-140,sort:STRING-STRING-STRING-INT-STRING,lines:16,filter:true">table</Type>
-			</Measurement>
-		</Param>
-		<Param id="601">
-			<Name>alarmStatusBit</Name>
-			<Description>Bit (Alarm Code Bit Status)</Description>
-			<Information>
-				<Subtext>Bit position in the Alarm Code register.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="602">
-			<Name>alarmStatusMask</Name>
-			<Description>Mask (Alarm Code Bit Status)</Description>
-			<Information>
-				<Subtext>Bit mask in the Alarm Code register.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="603">
-			<Name>alarmStatusDescription</Name>
-			<Description>Description (Alarm Code Bit Status)</Description>
-			<Information>
-				<Subtext>Meaning of the bit.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="604">
-			<Name>alarmStatusState</Name>
-			<Description>State (Alarm Code Bit Status)</Description>
-			<Information>
-				<Subtext>Bit state: Active when the bit is set.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>discreet</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Inactive</Display>
-						<Value>0</Value>
-					</Discreet>
-					<Discreet>
-						<Display>Active</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="605">
-			<Name>alarmStatusValue</Name>
-			<Description>Value (Alarm Code Bit Status)</Description>
-			<Information>
-				<Subtext>Meaning of the current bit state.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
 			</Measurement>
 		</Param>
 		<Param id="30">
@@ -1030,85 +180,6 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="110">
-			<Name>systemTime</Name>
-			<Description>System Time</Description>
-			<Information>
-				<Subtext>Device system time.</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="160">
-			<Name>syncSystemTime</Name>
-			<Description>Synchronize System Time</Description>
-			<Information>
-				<Subtext>Set the device time to the current DataMiner time.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type width="110">button</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Sync With DMA</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
-		<Param id="31">
-			<Name>systemTimeTitleEnd</Name>
-			<Description>System Time Settings End</Description>
-			<Information>
-				<Subtext>Section end.</Subtext>
-			</Information>
-			<Type>fixed</Type>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>3</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="end">title</Type>
-			</Measurement>
-		</Param>
 		<Param id="32">
 			<Name>timerTitleBegin</Name>
 			<Description>Turn off Timer Settings</Description>
@@ -1130,101 +201,6 @@
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
-		<Param id="114">
-			<Name>offTimer</Name>
-			<Description>Turn off Timer</Description>
-			<Information>
-				<Subtext>Turn off timer in minutes (offTimer).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>min</Units>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="164" snmpSetAndGet="true">
-			<Name>offTimer</Name>
-			<Description>Turn off Timer</Description>
-			<Information>
-				<Subtext>Set the turn off timer in minutes.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>min</Units>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="33">
-			<Name>timerTitleEnd</Name>
-			<Description>Turn off Timer Settings End</Description>
-			<Information>
-				<Subtext>Section end.</Subtext>
-			</Information>
-			<Type>fixed</Type>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>6</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="end">title</Type>
-			</Measurement>
-		</Param>
 		<Param id="34">
 			<Name>alarmRecordTitleBegin</Name>
 			<Description>Alarm Record Management</Description>
@@ -1244,103 +220,6 @@
 			</Display>
 			<Measurement>
 				<Type options="begin">title</Type>
-			</Measurement>
-		</Param>
-		<Param id="115">
-			<Name>clearAlarmRecord</Name>
-			<Description>Clear Alarm Record</Description>
-			<Information>
-				<Subtext>Clear alarm record register value (clearAlarmRecord).</Subtext>
-			</Information>
-			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.9.7 Unknown Units
- -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>8</Row>
-					</Position>
-				</Positions>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<!-- /SuppressValidator 2.9.7 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="165" snmpSetAndGet="true">
-			<Name>clearAlarmRecord</Name>
-			<Description>Clear Alarm Record</Description>
-			<Information>
-				<Subtext>Clear the alarm record table on the device.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>8</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type width="110">button</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Clear</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-		</Param>
-		<Param id="35">
-			<Name>alarmRecordTitleEnd</Name>
-			<Description>Alarm Record Management End</Description>
-			<Information>
-				<Subtext>Section end.</Subtext>
-			</Information>
-			<Type>fixed</Type>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>9</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type options="end">title</Type>
 			</Measurement>
 		</Param>
 		<Param id="40">
@@ -1457,28 +336,1033 @@
 				<Type>octetstring</Type>
 			</SNMP>
 		</Param>
-		<Param id="41">
-			<Name>productTitleEnd</Name>
-			<Description>Product Information Details End</Description>
+		<Param id="110">
+			<Name>systemTime</Name>
+			<Description>System Time</Description>
 			<Information>
-				<Subtext>Section end.</Subtext>
+				<Subtext>Device system time.</Subtext>
 			</Information>
-			<Type>fixed</Type>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
 					<Position>
-						<Page>Utility</Page>
+						<Page>Options</Page>
 						<Column>0</Column>
-						<Row>4</Row>
+						<Row>1</Row>
 					</Position>
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="end">title</Type>
+				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1110">
+		<Param id="111" trending="true">
+			<Name>inverterStatus</Name>
+			<Description>Inverter Status</Description>
+			<Information>
+				<Subtext>Inverter operating mode (Alarm Code bit B0).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+				<CH>1</CH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Inverter</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Bypass</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="112" trending="true">
+			<Name>mainSupplyPriority</Name>
+			<Description>Main Supply Priority</Description>
+			<Information>
+				<Subtext>Main supply choice of the inverter (AC or DC priority).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>172</Normal>
+				<WaH>220</WaH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>10</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>AC Priority</Display>
+						<Value>172</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DC Priority</Display>
+						<Value>220</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="114">
+			<Name>offTimer</Name>
+			<Description>Turn off Timer</Description>
+			<Information>
+				<Subtext>Turn off timer in minutes (offTimer).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<Units>min</Units>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="115">
+			<Name>clearAlarmRecord</Name>
+			<Description>Clear Alarm Record</Description>
+			<Information>
+				<Subtext>Clear alarm record register value (clearAlarmRecord).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 Unknown Units
+ -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>8</Row>
+					</Position>
+				</Positions>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="160">
+			<Name>syncSystemTime</Name>
+			<Description>Synchronize System Time</Description>
+			<Information>
+				<Subtext>Set the device time to the current DataMiner time.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type width="110">button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Sync With DMA</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="162" snmpSetAndGet="true">
+			<Name>mainSupplyPriority</Name>
+			<Description>Main Supply Priority</Description>
+			<Information>
+				<Subtext>Select the main supply of the inverter.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>10</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>togglebutton</Type>
+				<Discreets>
+					<Discreet>
+						<Display>AC Priority</Display>
+						<Value>172</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DC Priority</Display>
+						<Value>220</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="164" snmpSetAndGet="true">
+			<Name>offTimer</Name>
+			<Description>Turn off Timer</Description>
+			<Information>
+				<Subtext>Set the turn off timer in minutes.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<Units>min</Units>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="165" snmpSetAndGet="true">
+			<Name>clearAlarmRecord</Name>
+			<Description>Clear Alarm Record</Description>
+			<Information>
+				<Subtext>Clear the alarm record table on the device.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>8</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type width="110">button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Clear</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="200" trending="true">
+			<Name>dcVoltage</Name>
+			<Description>DC Voltage</Description>
+			<Information>
+				<Subtext>DC input voltage.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+				<Units>V</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>1000</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="201" trending="true">
+			<Name>acVoltage</Name>
+			<Description>AC Voltage</Description>
+			<Information>
+				<Subtext>AC input voltage.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+				<Units>V</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>1000</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="202" trending="true">
+			<Name>acFrequency</Name>
+			<Description>AC Frequency</Description>
+			<Information>
+				<Subtext>AC input frequency.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+				<Units>Hz</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="300" trending="true">
+			<Name>workFrequency</Name>
+			<Description>Work Frequency</Description>
+			<Information>
+				<Subtext>Inverter work (output) frequency.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+				<Units>Hz</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>100</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="301" trending="true">
+			<Name>outputVoltage</Name>
+			<Description>Output Voltage</Description>
+			<Information>
+				<Subtext>Output voltage.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+				<Units>V</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>1000</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="302" trending="true">
+			<Name>outputCurrent</Name>
+			<Description>Output Current</Description>
+			<Information>
+				<Subtext>Output current.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+				<Units>A</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>1000</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="303" trending="true">
+			<Name>outputPower</Name>
+			<Description>Output Power</Description>
+			<Information>
+				<Subtext>Output apparent power.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<Units>V</Units>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>100000</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="304" trending="true">
+			<Name>loadRatio</Name>
+			<Description>Load Ratio</Description>
+			<Information>
+				<Subtext>Load ratio.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>4</Row>
+					</Position>
+				</Positions>
+				<Units>%</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>0</Low>
+					<!--Device can have overload up to 150% of rated power, so the range is set to 150% to allow for monitoring of overload conditions.-->
+					<High>150</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="400" trending="true">
+			<Name>internalTemperature</Name>
+			<Description>Internal Temperature</Description>
+			<Information>
+				<Subtext>Internal temperature.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>6</Row>
+					</Position>
+				</Positions>
+				<Units>deg C</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>-50</Low>
+					<High>150</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="401" trending="true">
+			<Name>ambientTemperature</Name>
+			<Description>Ambient Temperature</Description>
+			<Information>
+				<Subtext>External (ambient) temperature.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown Threshold -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<Units>deg C</Units>
+				<Decimals>1</Decimals>
+				<Range>
+					<Low>-50</Low>
+					<High>150</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="402" trending="true">
+			<Name>fanStatus</Name>
+			<Description>Fan Status</Description>
+			<Information>
+				<Subtext>Fan status (Alarm Code bit B1).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1</Normal>
+				<MiH>0</MiH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>7</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Off</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>On</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="403" trending="true">
+			<Name>alarmSoundStatus</Name>
+			<Description>Alarm Sound Status</Description>
+			<Information>
+				<Subtext>Audible alarm (buzzer) status (Alarm Code bit B2).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>1</Normal>
+				<WaH>0</WaH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>1</Column>
+						<Row>6</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Disabled</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Enabled</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="500">
+			<Name>alarmCode</Name>
+			<Description>Alarm Code</Description>
+			<Information>
+				<Subtext>Raw 16-bit alarm status register.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 Unknown Units
+ -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.11.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+		</Param>
+		<Param id="501">
+			<Name>activeAlarmSummary</Name>
+			<Description>Active Alarms</Description>
+			<Information>
+				<Subtext>Names of the active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="502" trending="true">
+			<Name>activeAlarmCount</Name>
+			<Description>Active Alarm Count</Description>
+			<Information>
+				<Subtext>Number of active alarms (bits B3-B15, reserved B9 excluded).</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<!-- SuppressValidator 2.9.7 Unknown Units
+ -->
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>16</High>
+				</Range>
+			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="600">
+			<Name>alarmStatus</Name>
+			<Description>Alarm Code Bit Status</Description>
+			<Information>
+				<Subtext>Decoded Alarm Code register bits B0-B15.</Subtext>
+			</Information>
+			<Type>array</Type>
+			<ArrayOptions index="0">
+				<ColumnOption idx="0" pid="601" type="retrieved" options="" />
+				<ColumnOption idx="1" pid="602" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="603" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="604" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="605" type="retrieved" options="" />
+			</ArrayOptions>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="tab=columns:601|0-602|1-603|2-604|3-605|4,width:70-80-220-90-140,sort:STRING-STRING-STRING-INT-STRING,lines:16,filter:true">table</Type>
+			</Measurement>
+		</Param>
+		<Param id="601">
+			<Name>alarmStatusBit</Name>
+			<Description>Bit (Alarm Code Bit Status)</Description>
+			<Information>
+				<Subtext>Bit position in the Alarm Code register.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="602">
+			<Name>alarmStatusMask</Name>
+			<Description>Mask (Alarm Code Bit Status)</Description>
+			<Information>
+				<Subtext>Bit mask in the Alarm Code register.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="603">
+			<Name>alarmStatusDescription</Name>
+			<Description>Description (Alarm Code Bit Status)</Description>
+			<Information>
+				<Subtext>Meaning of the bit.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="604">
+			<Name>alarmStatusState</Name>
+			<Description>State (Alarm Code Bit Status)</Description>
+			<Information>
+				<Subtext>Bit state: Active when the bit is set.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0</Normal>
+				<CH>1</CH>
+			</Alarm>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Inactive</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Active</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="605">
+			<Name>alarmStatusValue</Name>
+			<Description>Value (Alarm Code Bit Status)</Description>
+			<Information>
+				<Subtext>Meaning of the current bit state.</Subtext>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1110" setter="true">
 			<Name>systemTimeRaw</Name>
 			<Description>System Time Raw</Description>
 			<Information>
@@ -1770,7 +1654,6 @@
 
 	<QActions>
 		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="2" name="After Startup" encoding="csharp" triggers="2" />
 		<QAction id="3" name="Process Raw Values" encoding="csharp" triggers="160;500;1110;1200;1201;1202;1300;1301;1302;1303;1304;1400;1401" />
 	</QActions>
 
@@ -1787,7 +1670,7 @@
 			<Name>Electrical</Name>
 			<Description>Electrical</Description>
 			<Type>poll</Type>
-			<Content>
+			<Content multipleGet="true">
 				<Param>1200</Param>
 				<Param>1201</Param>
 				<Param>1202</Param>
@@ -1802,7 +1685,7 @@
 			<Name>Environment and Settings</Name>
 			<Description>Environment and Settings</Description>
 			<Type>poll</Type>
-			<Content>
+			<Content multipleGet="true">
 				<Param>1400</Param>
 				<Param>1401</Param>
 				<Param>112</Param>
@@ -1822,46 +1705,13 @@
 			<Name>Identification</Name>
 			<Description>Identification</Description>
 			<Type>poll</Type>
-			<Content>
+			<Content multipleGet="true">
 				<Param>100</Param>
 				<Param>101</Param>
 				<Param>102</Param>
 			</Content>
 		</Group>
-		<Group id="2">
-			<Name>After Startup</Name>
-			<Description>After Startup</Description>
-			<Type>poll action</Type>
-			<Content>
-				<Action>2</Action>
-			</Content>
-		</Group>
 	</Groups>
-
-	<Triggers>
-		<Trigger id="1">
-			<Name>After Startup</Name>
-			<On>protocol</On>
-			<Time>after startup</Time>
-			<Type>action</Type>
-			<Content>
-				<Id>1</Id>
-			</Content>
-		</Trigger>
-	</Triggers>
-
-	<Actions>
-		<Action id="1">
-			<Name>After Startup Group</Name>
-			<On id="2">group</On>
-			<Type>execute next</Type>
-		</Action>
-		<Action id="2">
-			<Name>After Startup QAction</Name>
-			<On id="2">parameter</On>
-			<Type>run actions</Type>
-		</Action>
-	</Actions>
 
 	<Timers>
 		<Timer id="1">
