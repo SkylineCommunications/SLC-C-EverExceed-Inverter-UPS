@@ -586,47 +586,6 @@
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="162" snmpSetAndGet="true">
-			<Name>mainSupplyPriority</Name>
-			<Description>Main Supply Priority</Description>
-			<Information>
-				<Subtext>Select the main supply of the inverter.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>10</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>togglebutton</Type>
-				<Discreets>
-					<Discreet>
-						<Display>AC Priority</Display>
-						<Value>172</Value>
-					</Discreet>
-					<Discreet>
-						<Display>DC Priority</Display>
-						<Value>220</Value>
-					</Discreet>
-				</Discreets>
-			</Measurement>
-		</Param>
 		<Param id="113">
 			<Name>offTimer</Name>
 			<Description>Turn off Timer</Description>
@@ -634,43 +593,6 @@
 				<Subtext>Turn off timer in minutes (offTimer).</Subtext>
 			</Information>
 			<Type>read</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>5</Row>
-					</Position>
-				</Positions>
-				<Units>min</Units>
-				<Decimals>0</Decimals>
-				<Range>
-					<Low>0</Low>
-					<High>65535</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="163" snmpSetAndGet="true">
-			<Name>offTimer</Name>
-			<Description>Turn off Timer</Description>
-			<Information>
-				<Subtext>Set the turn off timer in minutes.</Subtext>
-			</Information>
-			<Type>write</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
@@ -737,43 +659,6 @@
 			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="164" snmpSetAndGet="true">
-			<Name>clearAlarmRecord</Name>
-			<Description>Clear Alarm Record</Description>
-			<Information>
-				<Subtext>Clear the alarm record table on the device.</Subtext>
-			</Information>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
-				<Type>integer</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Positions>
-					<Position>
-						<Page>Options</Page>
-						<Column>0</Column>
-						<Row>8</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type width="110">button</Type>
-				<Discreets>
-					<Discreet>
-						<Display>Clear</Display>
-						<Value>1</Value>
-					</Discreet>
-				</Discreets>
 			</Measurement>
 		</Param>
 		<Param id="120" trending="true">
@@ -1229,6 +1114,121 @@
 				</Discreets>
 			</Measurement>
 		</Param>
+		<Param id="162" snmpSetAndGet="true">
+			<Name>mainSupplyPriority</Name>
+			<Description>Main Supply Priority</Description>
+			<Information>
+				<Subtext>Select the main supply of the inverter.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.14.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>10</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>togglebutton</Type>
+				<Discreets>
+					<Discreet>
+						<Display>AC Priority</Display>
+						<Value>172</Value>
+					</Discreet>
+					<Discreet>
+						<Display>DC Priority</Display>
+						<Value>220</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="163" snmpSetAndGet="true">
+			<Name>offTimer</Name>
+			<Description>Turn off Timer</Description>
+			<Information>
+				<Subtext>Set the turn off timer in minutes.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.16.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>5</Row>
+					</Position>
+				</Positions>
+				<Units>min</Units>
+				<Decimals>0</Decimals>
+				<Range>
+					<Low>0</Low>
+					<High>65535</High>
+				</Range>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+		<Param id="164" snmpSetAndGet="true">
+			<Name>clearAlarmRecord</Name>
+			<Description>Clear Alarm Record</Description>
+			<Information>
+				<Subtext>Clear the alarm record table on the device.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.17.0</OID>
+				<Type>integer</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Options</Page>
+						<Column>0</Column>
+						<Row>8</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type width="110">button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Clear</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
 		<Param id="200" setter="true">
 			<Name>systemTimeRaw</Name>
 			<Description>System Time Raw</Description>
@@ -1236,30 +1236,6 @@
 				<Subtext>Raw DateAndTime octet string.</Subtext>
 			</Information>
 			<Type>read</Type>
-			<Interprete>
-				<RawType>other</RawType>
-				<Type>string</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<SNMP>
-				<Enabled>true</Enabled>
-				<OID type="complete">1.3.6.1.4.1.18001.1.2.13.0</OID>
-				<Type>octetstringhex</Type>
-			</SNMP>
-			<Display>
-				<RTDisplay>false</RTDisplay>
-			</Display>
-			<Measurement>
-				<Type>string</Type>
-			</Measurement>
-		</Param>
-		<Param id="250" snmpSetAndGet="true">
-			<Name>systemTimeRaw</Name>
-			<Description>System Time Raw</Description>
-			<Information>
-				<Subtext>Raw DateAndTime octet string to set.</Subtext>
-			</Information>
-			<Type>write</Type>
 			<Interprete>
 				<RawType>other</RawType>
 				<Type>string</Type>
@@ -1517,19 +1493,43 @@
 				<Type>number</Type>
 			</Measurement>
 		</Param>
-		<Param id="1000">
+		<Param id="250" snmpSetAndGet="true">
+			<Name>systemTimeRaw</Name>
+			<Description>System Time Raw</Description>
+			<Information>
+				<Subtext>Raw DateAndTime octet string to set.</Subtext>
+			</Information>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<SNMP>
+				<Enabled>true</Enabled>
+				<OID type="complete">1.3.6.1.4.1.18001.1.2.13.0</OID>
+				<Type>octetstringhex</Type>
+			</SNMP>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="600">
 			<Name>alarmStatus</Name>
 			<Description>Alarm Code Bit Status</Description>
 			<Information>
 				<Subtext>Decoded Alarm Code register bits B0-B15.</Subtext>
 			</Information>
 			<Type>array</Type>
-			<ArrayOptions index="0">
-				<ColumnOption idx="0" pid="1001" type="retrieved" options="" />
-				<ColumnOption idx="1" pid="1002" type="retrieved" options="" />
-				<ColumnOption idx="2" pid="1003" type="retrieved" options="" />
-				<ColumnOption idx="3" pid="1004" type="retrieved" options="" />
-				<ColumnOption idx="4" pid="1005" type="retrieved" options="" />
+			<ArrayOptions index="0" options=";naming=/603">
+				<ColumnOption idx="0" pid="601" type="retrieved" options="" />
+				<ColumnOption idx="1" pid="602" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="603" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="604" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="605" type="retrieved" options="" />
 			</ArrayOptions>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -1542,10 +1542,10 @@
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4,width:70-80-220-90-140,sort:STRING-STRING-STRING-INT-STRING,lines:16,filter:true">table</Type>
+				<Type options="tab=columns:601|0-602|1-603|2-604|3-605|4,width:70-80-220-90-140,sort:STRING-STRING-STRING-INT-STRING,lines:16,filter:true">table</Type>
 			</Measurement>
 		</Param>
-		<Param id="1001">
+		<Param id="601">
 			<Name>alarmStatusBit</Name>
 			<Description>Bit (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1564,7 +1564,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1002">
+		<Param id="602">
 			<Name>alarmStatusMask</Name>
 			<Description>Mask (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1583,7 +1583,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1003">
+		<Param id="603">
 			<Name>alarmStatusDescription</Name>
 			<Description>Description (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1602,7 +1602,7 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1004">
+		<Param id="604">
 			<Name>alarmStatusState</Name>
 			<Description>State (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1636,7 +1636,7 @@
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="1005">
+		<Param id="605">
 			<Name>alarmStatusValue</Name>
 			<Description>Value (Alarm Code Bit Status)</Description>
 			<Information>
@@ -1648,6 +1648,12 @@
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.5.1 Unknown threshold
+ -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
