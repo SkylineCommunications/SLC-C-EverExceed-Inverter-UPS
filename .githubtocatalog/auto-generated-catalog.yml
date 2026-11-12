@@ -28,7 +28,7 @@ type: Connector
 # If the ID is filled in but does not exist yet, a new Catalog item will be registered with this ID.
 # If the ID is filled in but does exist, properties of the item will be overwritten.
 #   Must be a valid GUID.
-id: ''
+id: b60f4c72-8017-4af5-b782-59d85f2a82d5
 
 # [Required]
 # The human-friendly name of the Catalog item.
@@ -36,13 +36,13 @@ id: ''
 #   Max length: 100 characters.
 #   Cannot contain newlines.
 #   Cannot contain leading or trailing whitespace characters.
-title: EverExceed-Inverter-UPS
+title: EverExceed Inverter UPS
 
 # [Optional]
 # General information about the Catalog item.
 #   Max length: 100,000 characters
 # Currently not shown in the Catalog UI but will be supported in the near future.
-short_description: DataMiner connector for monitoring and controlling An Power inverters via SNMP.
+short_description: DataMiner connector to control UPS Inverter devices
 
 # [Optional]
 # A valid URL that points to the source code.
